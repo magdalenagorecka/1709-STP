@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../scss/style.css",
+	"sources": [
+		"../scss/style.scss",
+		"../scss/partials/_var.scss"
+	],
+	"sourcesContent": [
+		"@import 'partials/var';\n\n* {\n  box-sizing: border-box;\n}\n",
+		""
+	],
+	"mappings": ";AAEA,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAW;CACxB",
+	"names": []
+}
