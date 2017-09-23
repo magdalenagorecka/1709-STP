@@ -1,5 +1,67 @@
-@import 'partials/var';
+@import 'partials/var', 'partials/mixins';
 
 * {
+  margin:0;
+  padding:0;
   box-sizing: border-box;
+}
+
+body{
+  background-color: $color-bg;
+  font-family: $font;
+}
+
+/******** BOX ************/
+.box{
+  width:90vw;
+  height:90vh;
+  margin: 10% auto;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
+  -moz-box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
+  @media (min-width: $break-xl){
+    width:60vw;
+    height:70vh;
+  }
+}
+
+/******** TABS **********/
+label{
+  display: inline-block;
+  padding:30px 40px;
+  margin:0 0 -1px;
+  color:#999;
+  //background-color: white;
+  &:hover{
+    @include grad;
+    border-bottom: 3px solid $color-secondary;
+    cursor: pointer;
+  }
+}
+
+input{
+  display: none;
+  &:checked + label{
+    color:$color-primary;
+    @include grad;
+    border-bottom: 3px solid $color-primary;
+  }
+}
+
+.content{
+  display: none;
+  border-top: 1px solid #ddd;
+}
+
+#tab-01:checked ~ #content-01,
+#tab-02:checked ~ #content-02{
+  display: block;
+  padding:20px;
+  background: white;
+}
+
+/********** HEADINGS **************/
+h1{
+  @include grad;
 }

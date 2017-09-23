@@ -1,6 +1,88 @@
 /* line 3, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+/* line 9, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+body {
+  background-color: whitesmoke;
+  font-family: "Open Sans", sans-serif;
+}
+
+/******** BOX ************/
+/* line 15, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+.box {
+  width: 90vw;
+  height: 90vh;
+  margin: 10% auto;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1200px) {
+  /* line 15, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  .box {
+    width: 60vw;
+    height: 70vh;
+  }
+}
+
+/******** TABS **********/
+/* line 30, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+label {
+  display: inline-block;
+  padding: 30px 40px;
+  margin: 0 0 -1px;
+  color: #999;
+}
+
+/* line 36, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+label:hover {
+  background: linear-gradient(to right, tomato, coral);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid coral;
+  cursor: pointer;
+}
+
+/* line 43, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+input {
+  display: none;
+}
+
+/* line 45, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+input:checked + label {
+  color: tomato;
+  background: linear-gradient(to right, tomato, coral);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid tomato;
+}
+
+/* line 52, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+.content {
+  display: none;
+  border-top: 1px solid #ddd;
+}
+
+/* line 57, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+#tab-01:checked ~ #content-01,
+#tab-02:checked ~ #content-02 {
+  display: block;
+  padding: 20px;
+  background: white;
+}
+
+/********** HEADINGS **************/
+/* line 65, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+h1 {
+  background: linear-gradient(to right, tomato, coral);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=../css/style.map */
