@@ -12,19 +12,41 @@
         <input type="radio" name="tabs" id="tab-01">
         <label for="tab-01">VINGUIDEN</label>
 
-        <input type="radio" name="tabs" id="tab-02"  checked>
+        <input type="radio" name="tabs" id="tab-02"   checked>
         <label for="tab-02">VG RSS</label>
 
           <div class="content" id="content-01">
-            <h1>VINGUIDEN</h1>
+            <div class="header__vin">
+              <h1>VINGUIDEN</h1>
+              <div class="menu">
+                <div class="btn sort">
+                  <a href=#>SORT BY NAME</a>
+                </div>
+                <div class="btn sort">
+                  <a href=#>SORT BY PRICE</a>
+                </div>
+                <div class="btn sort">
+                  <a href=#>COUNTRY</a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <select multiple="multiple" id="multi" name="my-select[]">
+                <option value='elem_1' selected>1</option>
+                <option value='elem_2'>2</option>
+                <option value='elem_3'>3</option>
+                <option value='elem_4'>4</option>
+              </select>
+            </div>
             <div id="vin"></div>
           </div>
 
           <div class="content" id="content-02">
             <div class="header__vg">
               <h1>VG RSS</h1>
-              <div class="btn sort">
+              <div class="btn sort" id="sort">
                 <a href=#>SORT BY DATE</a>
+                <!-- add after arrow - changing on click -->
               </div>
             </div>
 
@@ -34,5 +56,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="assets/script/script.js"></script>
+    <script src="assets/script/vin.js"></script>
   </body>
 </html>

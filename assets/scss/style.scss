@@ -1,4 +1,4 @@
-@import 'partials/var', 'partials/mixins', 'partials/vg', 'partials/headings';
+@import 'partials/var', 'partials/mixins', 'partials/vg', 'partials/headings', 'partials/vin';
 
 * {
   margin:0;
@@ -12,12 +12,24 @@ body{
   font-size: .9em;
 }
 
-.header__vg{
-  display: flex;
+.header__vg,
+.header__vin,
+.menu{
+  display: block;
+  @media (min-width: $break-s){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    vertical-align: baseline;
+  }
 
 }
+
 .btn a{
-  padding: 5px 15px;
+
+  @media (min-width: $break-s){
+    padding: 5px 15px;
+  }
   border:1px solid $color-primary;
   border-radius: 5px;
   background-color: white;
@@ -31,19 +43,29 @@ body{
     background-color: tomato;
     color: white;
   }
+  /*&::after{
+    content: ' \f1cb';
+  }
+  */
 
 }
 
 /******** BOX ************/
 .box{
-  width:90vw;
-  height:90vh;
-  margin: 10% auto;
+  width:100vw;
+  height:100vh;
+  margin:0 auto;
+
   background-color: white;
   border-radius: 5px;
   -webkit-box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
   -moz-box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
   box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
+  @media (min-width:$break-m){
+    width:90vw;
+    height:90vh;
+    margin: 5% auto;
+  }
   @media (min-width: $break-xl){
     width:60vw;
     height:70vh;
@@ -53,7 +75,12 @@ body{
 /******** TABS **********/
 label{
   display: inline-block;
-  padding:30px 50px;
+  text-align: center;
+  padding:30px 30px;
+  @media (min-width:321px){
+    padding:30px 50px;
+  }
+
   margin:0 0 -1px;
   color:#999;
   font-weight: 300;
@@ -85,4 +112,10 @@ input{
   display: block;
   padding:30px;
   background: white;
+}
+
+
+/******* MISC *********/
+.selectMulti{
+  padding: 20px 30px;
 }
