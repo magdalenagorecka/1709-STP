@@ -1,6 +1,7 @@
+$grad: linear-gradient(to right ,$color-primary, $color-secondary 80%);
 
-@mixin grad{
-  background: linear-gradient(to right ,$color-primary, $color-secondary);
+@mixin grad($grad){
+  background: $grad;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

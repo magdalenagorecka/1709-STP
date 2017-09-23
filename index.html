@@ -4,28 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>STP - Front End Task NWT</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700," rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700," rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
   <body>
     <div class="box">
-        <input type="radio" name="tabs" id="tab-01" checked>
-        <label for="tab-01">Vinguiden</label>
+        <input type="radio" name="tabs" id="tab-01">
+        <label for="tab-01">VINGUIDEN</label>
 
-        <input type="radio" name="tabs" id="tab-02">
+        <input type="radio" name="tabs" id="tab-02"  checked>
         <label for="tab-02">VG RSS</label>
 
           <div class="content" id="content-01">
-            <h1>Vinguiden</h1>
-            http://vinguiden-webapp-develop.seals.schibsted.pl/api/product?ids=4
+            <h1>VINGUIDEN</h1>
+            <div id="vin"></div>
           </div>
 
           <div class="content" id="content-02">
-            <h1>VG RSS</h1>
-            http://www.vg.no/rss/feed/
+            <div class="header__vg">
+              <h1>VG RSS</h1>
+              <div class="btn sort">
+                <a href=#>SORT BY DATE</a>
+              </div>
+            </div>
+
+            <div class="rssItem"></div>
           </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="assets/script/script.js"></script>
   </body>
 </html>
