@@ -28,15 +28,16 @@ $(document).ready(function() {
 
   function sortItem(){
     for(var i=0; i<sortArr.length; i++){
-      html += "<p class='rss'><h3>" + sortArr[i].title + "</h3></p>";
-      html += "<p class='pubDate'>" + sortArr[i].pubDate + "</p>";
+      html += "<div  class='rss'><p><h3>" + sortArr[i].title + "</h3></p>";
+      html += "<p class='pubDate'>" + sortArr[i].pubDate + "</p></div>";
     }
     $rssItem.html(html);
   }
-  
+
   //sorting button
   $sort.click(function(){
     html='';
+    $(this).find('i').toggleClass('fa-caret-down fa-caret-up');
     sortArr.reverse();
     sortItem();
   });
