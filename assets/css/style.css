@@ -1,7 +1,7 @@
 /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vg.scss */
 .rss {
   width: 100%;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 20px 10px;
 }
 
@@ -21,26 +21,30 @@ h1 {
 
 /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 select {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: none;
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
   margin: 0;
-  padding: 0 2em 0 1em;
-  width: 100%;
+  padding: 1em 3em;
 }
 
-/* line 14, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 9, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem {
   display: flex;
-  padding: 20px 0;
+  margin: 20px 0;
+  padding: 20px 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
 }
 
-/* line 20, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 15, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__photo img {
+  height: 150px;
+}
+
+/* line 19, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__info {
   padding: 0 20px;
 }
@@ -55,11 +59,12 @@ select {
 /* line 9, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 body {
   background-color: whitesmoke;
+  color: #282828;
   font-family: "Open Sans", sans-serif;
   font-size: .9em;
 }
 
-/* line 15, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 16, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .header__vg,
 .header__vin,
 .menu {
@@ -67,7 +72,7 @@ body {
 }
 
 @media (min-width: 576px) {
-  /* line 15, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 16, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   .header__vg,
   .header__vin,
   .menu {
@@ -78,7 +83,7 @@ body {
   }
 }
 
-/* line 28, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 29, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .btn a {
   border: 1px solid tomato;
   border-radius: 5px;
@@ -96,20 +101,20 @@ body {
 }
 
 @media (min-width: 576px) {
-  /* line 28, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 29, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   .btn a {
     padding: 5px 15px;
   }
 }
 
-/* line 42, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 43, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .btn a:hover {
   background-color: tomato;
   color: white;
 }
 
 /******** BOX ************/
-/* line 54, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 55, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .box {
   width: 100vw;
   height: 100vh;
@@ -122,7 +127,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  /* line 54, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 55, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   .box {
     width: 90vw;
     height: 90vh;
@@ -131,15 +136,15 @@ body {
 }
 
 @media (min-width: 1200px) {
-  /* line 54, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 55, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   .box {
-    width: 60vw;
+    width: 70vw;
     height: 70vh;
   }
 }
 
 /******** TABS **********/
-/* line 76, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 74, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 label {
   display: inline-block;
   text-align: center;
@@ -150,13 +155,13 @@ label {
 }
 
 @media (min-width: 321px) {
-  /* line 76, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 74, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   label {
     padding: 30px 50px;
   }
 }
 
-/* line 88, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 86, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 label:hover {
   background: linear-gradient(to right, tomato, coral 80%);
   -webkit-background-clip: text;
@@ -165,12 +170,12 @@ label:hover {
   cursor: pointer;
 }
 
-/* line 95, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 93, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 input {
   display: none;
 }
 
-/* line 97, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 95, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 input:checked + label {
   color: tomato;
   background: linear-gradient(to right, tomato, coral 80%);
@@ -180,13 +185,13 @@ input:checked + label {
   border-bottom: 3px solid tomato;
 }
 
-/* line 105, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 103, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .content {
   display: none;
   border-top: 1px solid #ddd;
 }
 
-/* line 110, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 108, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 #tab-01:checked ~ #content-01,
 #tab-02:checked ~ #content-02 {
   display: block;
@@ -195,7 +200,7 @@ input:checked + label {
 }
 
 /******* MISC *********/
-/* line 119, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 117, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .selectMulti {
   padding: 20px 30px;
 }

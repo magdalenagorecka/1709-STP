@@ -6,13 +6,19 @@
     <title>STP - Front End Task NWT</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700," rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <script>
+    function test(){
+      var sel1 = document.getElementById("pages");
+      var page = sel1.options[sel1.selectedIndex].value;
+    }
+    </script>
   </head>
   <body>
     <div class="box">
-        <input type="radio" name="tabs" id="tab-01">
+        <input type="radio" name="tabs" id="tab-01"   checked>
         <label for="tab-01">VINGUIDEN</label>
 
-        <input type="radio" name="tabs" id="tab-02"   checked>
+        <input type="radio" name="tabs" id="tab-02">
         <label for="tab-02">VG RSS</label>
 
           <div class="content" id="content-01">
@@ -31,12 +37,33 @@
               </div>
             </div>
             <div>
-              <select multiple="multiple" id="multi" name="my-select[]">
-                <option value='elem_1' selected>1</option>
-                <option value='elem_2'>2</option>
-                <option value='elem_3'>3</option>
-                <option value='elem_4'>4</option>
+              <select name="pages" id="pages" onchange="test()">
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+                <option value='15'>15</option>
+                <option value='16'>16</option>
+                <option value='17'>17</option>
+                <option value='18'>18</option>
+                <option value='19'>19</option>
+                <option value='20'>20</option>
+                <option value='21'>21</option>
+                <option value='22'>22</option>
+                <option value='23'>23</option>
+                <option value='24'>24</option>
               </select>
+              <input type="button" value="changePage" />
             </div>
             <div id="vin"></div>
           </div>

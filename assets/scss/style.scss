@@ -8,6 +8,7 @@
 
 body{
   background-color: $color-bg;
+  color:$font-color;
   font-family: $font;
   font-size: .9em;
 }
@@ -57,17 +58,14 @@ body{
   margin:0 auto;
 
   background-color: white;
-  border-radius: 5px;
-  -webkit-box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
-  -moz-box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
-  box-shadow: 3px 3px 22px -9px rgba(0,0,0,0.3);
+  @include shadow;
   @media (min-width:$break-m){
     width:90vw;
     height:90vh;
     margin: 5% auto;
   }
   @media (min-width: $break-xl){
-    width:60vw;
+    width:70vw;
     height:70vh;
   }
 }

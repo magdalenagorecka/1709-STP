@@ -1,0 +1,22 @@
+select{
+  cursor:pointer;
+  display:inline-block;
+  font-size:1em;
+  margin:0;
+  padding:1em 3em;
+
+}
+.vinItem{
+  display: flex;
+  margin:20px 0;
+  padding:20px 20px;
+  @include shadow;
+  &__photo{
+    img{
+      height: 150px;
+    }
+  }
+  &__info{
+    padding:0 20px;
+  }
+}
