@@ -24,6 +24,17 @@ h1 {
   background: linear-gradient(to right, tomato, coral 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  padding-bottom: 20px;
+  display: none;
+}
+
+@media (min-width: 576px) {
+  /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_headings.scss */
+  h1 {
+    display: inline;
+    text-align: left;
+  }
 }
 
 /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
@@ -140,6 +151,8 @@ body {
 
 /* line 29, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .btn button {
+  width: 100%;
+  padding: 15px;
   border: 1px solid tomato;
   border-radius: 5px;
   background-color: white;
@@ -162,13 +175,13 @@ body {
   }
 }
 
-/* line 43, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 45, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .btn button:hover {
   background-color: tomato;
   color: white;
 }
 
-/* line 47, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 49, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .btn button .fa {
   font-size: 1.2em;
   padding-right: 5px;
@@ -176,7 +189,7 @@ body {
 }
 
 /******** BOX ************/
-/* line 60, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .box {
   width: 100vw;
   height: 100vh;
@@ -189,7 +202,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  /* line 60, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   .box {
     width: 90vw;
     height: 90vh;
@@ -198,7 +211,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-  /* line 60, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   .box {
     width: 70vw;
     height: 70vh;
@@ -206,8 +219,9 @@ body {
 }
 
 /******** TABS **********/
-/* line 79, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 81, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 label {
+  width: 49%;
   display: inline-block;
   text-align: center;
   padding: 30px 30px;
@@ -217,13 +231,20 @@ label {
 }
 
 @media (min-width: 321px) {
-  /* line 79, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  /* line 81, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
   label {
     padding: 30px 50px;
   }
 }
 
-/* line 91, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+@media (min-width: 576px) {
+  /* line 81, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  label {
+    width: 20%;
+  }
+}
+
+/* line 97, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 label:hover {
   background: linear-gradient(to right, tomato, coral 80%);
   -webkit-background-clip: text;
@@ -232,12 +253,12 @@ label:hover {
   cursor: pointer;
 }
 
-/* line 98, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 104, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 input {
   display: none;
 }
 
-/* line 100, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 106, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 input:checked + label {
   color: tomato;
   background: linear-gradient(to right, tomato, coral 80%);
@@ -247,13 +268,13 @@ input:checked + label {
   border-bottom: 3px solid tomato;
 }
 
-/* line 108, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 114, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .content {
   display: none;
   border-top: 1px solid #ddd;
 }
 
-/* line 113, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 119, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 #tab-01:checked ~ #content-01,
 #tab-02:checked ~ #content-02 {
   display: block;
@@ -262,7 +283,7 @@ input:checked + label {
 }
 
 /******* MISC *********/
-/* line 122, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 128, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .selectMulti {
   height: 25px;
   padding: 20px 30px;
