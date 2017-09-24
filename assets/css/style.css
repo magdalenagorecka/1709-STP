@@ -3,10 +3,12 @@
   width: 100%;
   margin: 10px auto;
   padding: 20px 10px;
+  border-bottom: 1px solid whitesmoke;
 }
 
-/* line 7, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vg.scss */
+/* line 8, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vg.scss */
 .pubDate {
+  padding-top: 10px;
   color: #ccc;
   font-weight: 300;
   font-style: italic;
@@ -39,14 +41,34 @@ select {
   box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
 }
 
-/* line 15, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
-.vinItem__photo img {
-  height: 150px;
+/* line 14, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__photo {
+  text-align: center;
+  padding: 0 30px;
 }
 
-/* line 19, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 17, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__photo img {
+  max-height: 150px;
+}
+
+/* line 21, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__info {
   padding: 0 20px;
+}
+
+/* line 24, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__id {
+  padding-top: 5px;
+  font-size: .7em;
+  color: #a2a2a2;
+}
+
+/* line 29, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__price {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: tomato;
 }
 
 /* line 3, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */

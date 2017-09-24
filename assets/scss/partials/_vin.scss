@@ -12,11 +12,23 @@ select{
   padding:20px 20px;
   @include shadow;
   &__photo{
+    text-align: center;
+    padding:0 30px;
     img{
-      height: 150px;
+      max-height: 150px;
     }
   }
   &__info{
     padding:0 20px;
+  }
+  &__id{
+    padding-top:5px;
+    font-size: .7em;
+    color:#a2a2a2;
+  }
+  &__price{
+    font-size: 1.8em;
+    font-weight: bold;
+    color:$color-primary;
   }
 }
