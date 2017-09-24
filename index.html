@@ -8,14 +8,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/84589530e3.js"></script>
 
   </head>
   <body>
     <div class="box">
-        <input type="radio" name="tabs" id="tab-01" checked>
+        <input type="radio" name="tabs" id="tab-01">
         <label for="tab-01">VINGUIDEN</label>
 
-        <input type="radio" name="tabs" id="tab-02">
+        <input type="radio" name="tabs" id="tab-02"  checked>
         <label for="tab-02">VG RSS</label>
 
           <div class="content" id="content-01">
@@ -23,13 +24,17 @@
               <h1>VINGUIDEN</h1>
               <div class="menu">
                 <div class="btn sort">
-                  <a href=# class="sort__name">SORT BY NAME</a>
+                  <button class="sort__name">SORT BY NAME <i class="fa fa-caret-up" ></i></button>
                 </div>
                 <div class="btn sort">
-                  <a href=# class="sort__price">SORT BY PRICE</a>
+                  <button class="sort__price">SORT BY PRICE <i class="fa fa-caret-up" ></i></button>
                 </div>
                 <div class="btn sort">
-                  <a href=# class="filter__country">COUNTRY</a>
+                  <button class="filter__country">COUNTRY</button>
+                  <select name="country" id="country">
+                    <option value='Spanien' selected>Spanien</option>
+                    <option calue='Italien'>Italien</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -63,13 +68,12 @@
             </div>
             <div id="vin"></div>
           </div>
-
+<!-- ******** VG RSS ************ -->
           <div class="content" id="content-02">
             <div class="header__vg">
               <h1>VG RSS</h1>
               <div class="btn sort" id="sort">
-                <a href=#>SORT BY DATE</a>
-                <!-- add after arrow - changing on click -->
+                <button>SORT BY DATE <i class="fa fa-caret-up" ></i></button>
               </div>
             </div>
 

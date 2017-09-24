@@ -20,15 +20,35 @@ select{
   }
   &__info{
     padding:0 20px;
+    h3{
+      font-size:1.4em;
+      line-height: 1.5em;
+    }
+  }
+  &__small{
+    padding-top: 20px;
+    font-size:.9em;
+    color:$grey
   }
   &__id{
     padding-top:5px;
     font-size: .7em;
-    color:#a2a2a2;
+    color:$grey;
   }
   &__price{
     font-size: 1.8em;
     font-weight: bold;
     color:$color-primary;
+  }
+  &__category{
+    &--red{
+      color:$color-primary;
+    }
+    &--blanc{
+      color:yellow;
+    }
+    &--rose{
+      color:pink;
+    }
   }
 }
