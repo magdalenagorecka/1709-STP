@@ -6,6 +6,7 @@ $(document).ready(function() {
       countryArray,
       jsonData,
       i,
+       jsonDataFiltered,
       sortOrder = 'asc';
 
   $('body').on('load',getDefault());
@@ -18,7 +19,7 @@ $(document).ready(function() {
         logo;
 
         jsonData = data;
-
+        jsonDataFiltered = jsonData;
         data.forEach(function showItems(val){
 
           if(val.imageUrl !== null){
@@ -106,11 +107,14 @@ $(document).ready(function() {
       let selectedItem = $("#country :selected");
       $.getJSON(vinURL, function(data){jsonData = data});
         if(selectedItem.val() === "default"){
+          jsonDataFiltered = jsonData;
           getDefault();
+
         }else{
-          jsonData = jsonData.filter(function(i){
+          jsonDataFiltered = jsonData.filter(function(i){
             return i.country === selectedItem.val();
           });
+          jsonData = jsonDataFiltered;
           showJson();
       }
     }); //end country select change
@@ -118,20 +122,20 @@ $(document).ready(function() {
 //***** Menu buttons **********//
   function sortPrice(){
      if(sortOrder === 'asc'){
-       jsonData = jsonData.sort(function(a,b) { return a.price - b.price});
+       jsonData = jsonDataFiltered.sort(function(a,b) { return a.price - b.price});
        sortOrder = 'desc';
      }else if(sortOrder === 'desc'){
-       jsonData = jsonData.sort(function(a,b) { return b.price - a.price});
+       jsonData = jsonDataFiltered.sort(function(a,b) { return b.price - a.price});
        sortOrder = 'asc';
      }
   }
 
 function sortName(){
   if(sortOrder === 'asc'){
-    jsonData = jsonData.sort(function(a,b) { return a.name.localeCompare(b.name)});
+    jsonData = jsonDataFiltered.sort(function(a,b) { return a.name.localeCompare(b.name)});
     sortOrder = 'desc';
   }else if(sortOrder === 'desc'){
-    jsonData = jsonData.sort(function(a,b) { return b.name.localeCompare(a.name)});
+    jsonData = jsonDataFiltered.sort(function(a,b) { return b.name.localeCompare(a.name)});
     sortOrder = 'asc';
   }
 }
