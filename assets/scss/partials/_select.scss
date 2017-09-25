@@ -1,7 +1,7 @@
 .styled-select {
   display:inline-block;
   background-color: white;
-  color: black;
+  color: $grey;
   cursor:pointer;
   font-size:1.1em;
   margin-bottom:1.5em;
@@ -10,10 +10,11 @@
   border: solid 1px $grey;
   border-radius: 5px;
   height: 1.8em;
-  width:5em;
+  width:7em;
 }
 
-.styled-select:before {
+.styled-select:before,
+select:before {
   font-family: "FontAwesome";
   border-width: 0 0 0 1px;
   content:'\f103';
@@ -43,6 +44,7 @@
     margin:1px;
     padding:0 2em 0 2em;
     width:90%;
+    border:1px solid $color-bg;
     @include shadow;
 
 }
@@ -51,4 +53,38 @@
   padding:0;
   margin:0;
   font-size: .85em;
+}
+
+//************ select country ***********/
+select{
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  cursor:pointer;
+  display:inline-block;
+  font-size:1em;
+  width:100%;
+  padding:15px;
+    @media (min-width: $break-s){
+
+      padding: 5px 10px;
+    }
+    border:1px solid $color-primary;
+    border-radius: 5px;
+    background-color: white;
+    font-size: .8em;
+    font-weight: 700;
+    color:$color-primary;
+    text-decoration: none;
+    transition: background-color .5s;
+    -webkit-transition:background-color .5s;
+    &:hover{
+      background-color: tomato;
+      color: white;
+    }
+    .fa {
+      font-size: 1.2em;
+    padding-right: 5px;
+    padding-left: 10px;
+  }
 }

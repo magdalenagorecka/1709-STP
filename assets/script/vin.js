@@ -17,7 +17,6 @@ $(document).ready(function() {
 
         jsonData = data;
 
-
         data.forEach(function showItems(val){
 
           if(val.imageUrl !== null){
@@ -26,16 +25,17 @@ $(document).ready(function() {
             logo ='./assets/img/placeholder.png';
           }
 
-          if(val.product == "Rött vin"){
-          //  $('.vinItem__category').addClass("red");
-          }else if(val.product == "Mousserande vin"){
-            $('.vinItem__category').addClass("blanc");
-          }else if(val.product == "Rosévin"){
-            $('.vinItem__category').addClass("rose");
-          }else{
-            console.log(val.product);
-          }
 
+        /*  console.log(data);
+          if(val.product === "Rött vin"){
+          $('#vinItem__category').addClass("red");
+        }else if(val.product === "Mousserande vin"){
+            $('#vinItem__category').addClass("blanc");
+          }else if(val.product === "Rosévin"){
+            $('#vinItem__category').addClass("rose");
+          }else{
+          }
+*/
           html += "<div class='vinItem'>";
           html += "<div class='vinItem__photo'>";
           html += "<img src='" + logo + "'>";
@@ -45,20 +45,28 @@ $(document).ready(function() {
           html += "<p>" + val.country + " / " + val.region + "</p>";
           html += "<p><h3>" + val.name + "</h3></p>";
           html += "<p id='vinItem__category'><span>" + val.product + "</span> | " + val.grapes + " | " + val.productionYear + "</p>";
-          html += "<p class='vinItem__rate'> <i class='material-icons'>star_rate</i>Rate: " + val.rate + "</p>";
+          html += "<p class='vinItem__rate'>Rate: " + val.rate + "</p>";
           html += "<div class='vinItem__small'><p >Sold Bottles: " + val.soldBottles + "   <a href='" + val.productUrl + "'>Product's Link</a></p>";
           html += "<p>Availability: " + val.availability + "    Ecological: " + val.ecological + "    Packaging: " + val.packaging + "</p></div>";
           html += "</div>";
           html += "<div  class='vinItem__price'><p>" + val.price + " kr </p>";
           html += "</div>";
           html += "</div>";
+
+
+
+
         });//end data.forEach
+
+
         $('#vin').html(html);
 
         //Array of all countries sorted a-z, filtered for duplicates
         let countryArr = $.map(data, (el) => { return el.country })
         .filter((elem, index, self) => { return index == self.indexOf(elem) })
         .sort(function(a,b) { return a.localeCompare(b)});
+
+
 
 
       }, "json");
@@ -74,7 +82,7 @@ $(document).ready(function() {
 
 
 // on multiple select change
-  $pages.on('change',function(){
+  $pages.change(function(){
     let selectedPages = [];
 
     $("#pages :selected").each(function(){
@@ -88,42 +96,24 @@ $(document).ready(function() {
 
   // select change
 
-    $('#country').on('change',function(){
+    $('#country').change(function(){
 
       let selectedItem = $("#country :selected");
-      console.log("selectedItem: "+selectedItem.val());
-
-
+      $.getJSON(vinURL, function(data){jsonData = data});
         if(selectedItem.val() === "default"){
           getDefault();
-        }else if(selectedItem.val().length === 0){
-          ("#vin").html("<p>There is no vine</p>");
         }else{
           jsonData = jsonData.filter(function(i){
-          return i.country === $("#country :selected").val();
-        }
-      )}
-      console.log(jsonData);
-      showJson();
-      //getDefault();
+            return i.country === selectedItem.val();
+          });
+          showJson();
+      }
 
-    });
+    }); //end country select change
 
 
 
 //***** Menu buttons **********//
-
-/*
-let selectedItem = $("#country :selected");
-console.log("selectedItem: "+selectedItem);
-  $('#country').on('change', function(){
-    jsonData = jsonData.filter(function(i) {
-      return i.country === selectedItem;
-    });
-    showJson();
-   }
- );
-*/
 
   let sortOrder = 'asc';
 
@@ -168,17 +158,6 @@ console.log("selectedItem: "+selectedItem);
       logo ='./assets/img/placeholder.png';
     }
 
-    if(jsonData[i].product == "Rött vin"){
-      $('.vinItem__category').addClass("red");
-      console.log("gdynia");
-    }else if(jsonData[i].product == "Mousserande vin"){
-      $('.vinItem__category').toggleClass("vinItem__category--blanc");
-      console.log("gdansk");
-    }else if(jsonData[i].product == "Rosévin"){
-      $('.vinItem__category').toggleClass("vinItem__category--rose");
-      console.log("sopot");
-    }
-
     html += "<div class='vinItem'>";
     html += "<div class='vinItem__photo'>";
     html += "<img src='" + logo + "'>";
@@ -188,17 +167,27 @@ console.log("selectedItem: "+selectedItem);
     html += "<p>" + jsonData[i].country + " / " + jsonData[i].region + "</p>";
     html += "<p><h3>" + jsonData[i].name + "</h3></p>";
     html += "<p><span id='vinItem__category'>" + jsonData[i].product + "</span> | " + jsonData[i].grapes + " | " + jsonData[i].productionYear + "</p>";
-    html += "<p class='vinItem__rate'> <i class='material-icons'>star_rate</i>Rate: " + jsonData[i].rate + "</p>";
+    html += "<p class='vinItem__rate'>Rate: " + jsonData[i].rate + "</p>";
     html += "<div class='vinItem__small'><p >Sold Bottles: " + jsonData[i].soldBottles + "   <a href='" + jsonData[i].productUrl + "'>Product's Link</a></p>";
     html += "<p>Availability: " + jsonData[i].availability + "    Ecological: " + jsonData[i].ecological + "    Packaging: " + jsonData[i].packaging + "</p></div>";
     html += "</div>";
     html += "<div  class='vinItem__price'><p>" + jsonData[i].price + " kr </p>";
     html += "</div>";
     html += "</div>";
-
   }
+/*  if(jsonData.product === "Rött vin"){
+  $('.vinItem__info').addClass("red");
+}else if(jsonData.product === "Mousserande vin"){
+    $('#vinItem__category').addClass("blanc");
+  }else if(jsonData.product === "Rosévin"){
+    $('#vinItem__category').addClass("rose");
+  }else{
+  }
+*/
 
-  $(".styled-select").on("click", function(){
+  $(".styled-select").on({mouseenter:function(){
     $("#pages").fadeIn();
-  });
+  }, mouseleave:function(){
+    $("#pages").fadeOut();
+  }});
 });//ready
