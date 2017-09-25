@@ -13,7 +13,8 @@ $(document).ready(function() {
     xmlData.sort(function(a,b){
       a = $(a).find("pubDate").text();
       b = $(b).find("pubDate").text();
-      return(b.localeCompare(a));
+      //return(b.localeCompare(a));
+      return new Date(b).getTime() - new Date(a).getTime();
     });
   //make an array
     xmlData.each(function(){
