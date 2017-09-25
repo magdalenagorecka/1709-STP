@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   let vinURL = "http://vinguiden-webapp-develop.seals.schibsted.pl/api/product?ids=1",
       $pages = $("#pages"),
-      countryArr,
+      countryArray,
       jsonData,
       wantedData,
       i;
@@ -10,12 +10,13 @@ $(document).ready(function() {
   $('body').on('load',getDefault());
 
   function getDefault(){
-    $.getJSON(vinURL,
-      function(data){
-        var html = "";
+    $.getJSON(vinURL, function(data){
+
+        var html = "",
+        logo;
+
         jsonData = data;
-        console.log(data);
-        var logo;
+
 
         data.forEach(function showItems(val){
 
@@ -25,13 +26,17 @@ $(document).ready(function() {
             logo ='./assets/img/placeholder.png';
           }
 
-          if(val.product === "Rött vin"){
-            $('#vinItem__category').addClass("vinItem__category--red");
-          }else if(val.product === "Mousserande vin"){
-            $('#vinItem__category').addClass("vinItem__category--blanc");
-          }else if(val.product === "Rosévin"){
-            $('#vinItem__category').addClass("vinItem__category--rose");
+          if(val.product == "Rött vin"){
+          //  $('.vinItem__category').addClass("red");
+          }else if(val.product == "Mousserande vin"){
+            $('.vinItem__category').addClass("blanc");
+          }else if(val.product == "Rosévin"){
+            $('.vinItem__category').addClass("rose");
+          }else{
+            console.log(val.product);
           }
+
+
 
           html += "<div class='vinItem'>";
           html += "<div class='vinItem__photo'>";
@@ -41,7 +46,7 @@ $(document).ready(function() {
           html += "<div class='vinItem__info'>";
           html += "<p>" + val.country + " / " + val.region + "</p>";
           html += "<p><h3>" + val.name + "</h3></p>";
-          html += "<p><span id='vinItem__category'>" + val.product + "</span> | " + val.grapes + " | " + val.productionYear + "</p>";
+          html += "<p id='vinItem__category'><span>" + val.product + "</span> | " + val.grapes + " | " + val.productionYear + "</p>";
           html += "<p class='vinItem__rate'> <i class='material-icons'>star_rate</i>Rate: " + val.rate + "</p>";
           html += "<div class='vinItem__small'><p >Sold Bottles: " + val.soldBottles + "   <a href='" + val.productUrl + "'>Product's Link</a></p>";
           html += "<p>Availability: " + val.availability + "    Ecological: " + val.ecological + "    Packaging: " + val.packaging + "</p></div>";
@@ -51,11 +56,25 @@ $(document).ready(function() {
           html += "</div>";
         });//end data.forEach
         $('#vin').html(html);
+
+        //Array of all countries sorted a-z, filtered for duplicates
+        let countryArr = $.map(data, (el) => { return el.country })
+        .filter((elem, index, self) => { return index == self.indexOf(elem) })
+        .sort(function(a,b) { return a.localeCompare(b)});
+
+
       }, "json");
 
 
-
   }//end getDefault
+
+
+    //  $("#country").append('<option value=' + value[i] + '>' + countryArr[i] + '</option>');
+
+
+
+
+
 // on multiple select change
   $pages.on('change',function(){
     let selectedPages = [];
@@ -70,9 +89,7 @@ $(document).ready(function() {
 
 //***** Menu buttons **********//
 
-
-
-
+/*
 let selectedItem = $("#country :selected");
 console.log("selectedItem: "+selectedItem);
   $('#country').on('change', function(){
@@ -82,15 +99,10 @@ console.log("selectedItem: "+selectedItem);
     showJson();
    }
  );
+*/
 
-// pobierz tablicę
-// stwórz tablicę państw
-// usuń powtarzające się państwa
-// stwórz select z państwami
-//
+  let sortOrder = 'asc';
 
-
-let sortOrder = 'asc';
   $('.sort__price').click(function(){
     $(this).find('i').toggleClass('fa-caret-down fa-caret-up');
 
@@ -133,12 +145,15 @@ let sortOrder = 'asc';
       logo ='./assets/img/placeholder.png';
     }
 
-    if(jsonData[i].product === "Rött vin"){
-      $('#vinItem__category').addClass("vinItem__category--red");
-    }else if(jsonData[i].product === "Mousserande vin"){
-      $('#vinItem__category').addClass("vinItem__category--blanc");
-    }else if(jsonData[i].product === "Rosévin"){
-      $('#vinItem__category').addClass("vinItem__category--rose");
+    if(jsonData[i].product == "Rött vin"){
+      $('.vinItem__category').addClass("red");
+      console.log("gdynia");
+    }else if(jsonData[i].product == "Mousserande vin"){
+      $('.vinItem__category').toggleClass("vinItem__category--blanc");
+      console.log("gdansk");
+    }else if(jsonData[i].product == "Rosévin"){
+      $('.vinItem__category').toggleClass("vinItem__category--rose");
+      console.log("sopot");
     }
 
     html += "<div class='vinItem'>";
@@ -157,6 +172,15 @@ let sortOrder = 'asc';
     html += "<div  class='vinItem__price'><p>" + jsonData[i].price + " kr </p>";
     html += "</div>";
     html += "</div>";
-  }
 
+  }
+  countryArr = $.map(jsonData, function (el) {
+    return el.country;
+  });
+  console.log(countryArr);
+
+  countryArr = countryArr.filter(function(elem, index, self) {
+    return index == self.indexOf(elem);
+  });
+  console.log(countryArr);
 });//ready

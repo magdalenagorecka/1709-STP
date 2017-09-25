@@ -40,15 +40,14 @@ select{
     font-weight: bold;
     color:$color-primary;
   }
-  &__category{
-    &--red{
-      color:$color-primary;
-    }
-    &--blanc{
-      color:yellow;
-    }
-    &--rose{
-      color:pink;
-    }
-  }
+}
+
+.red{
+  background-color: #ffdd00;
+}
+.blanc{
+  color:yellow;
+}
+.rose{
+  color:pink;
 }
