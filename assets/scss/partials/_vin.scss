@@ -1,5 +1,24 @@
-.vinItem{
+#vin{
   display: flex;
+  flex-direction: row;
+  flex-grow:1;
+  flex-wrap: wrap;
+}
+.vinItem{
+  display: inline-flex;
+  flex-direction: row;
+  flex-grow:1;
+  flex-wrap: wrap;
+  width:100%;
+  &:hover{
+    border-radius: 5px;
+    -webkit-box-shadow: 3px 3px 18px -5px rgba(255,99,71,0.5);
+    -moz-box-shadow: 3px 3px 18px -5px rgba(255,99,71,0.5);
+    box-shadow: 3px 3px 18px -5px rgba(255,99,71,0.5);
+  }
+  @media (min-width: $break-l){
+    width:40%;
+  }
   margin:20px 0;
   padding:20px 20px;
   @include shadow;
@@ -16,7 +35,11 @@
     }
   }
   &__info{
-    padding:0 20px;
+    padding:0 20px 0 0;
+    width:70%;
+    @media (min-width: $break-l){
+      width:60%;
+    }
     h3{
       text-transform: uppercase;
       font-weight: 600;
@@ -37,13 +60,6 @@
   }
   &__rate{
     font-size: .9em;
-    /*&::before{
-
-      content:'\2605';
-      color:$color-primary;
-      font-size:1.1em;
-      padding-right:.4em;
-    }*/
   }
 
   &__small{
@@ -57,7 +73,10 @@
     color:$grey;
   }
   &__price{
+    font-size: 1.4em;
+    @media (min-width: $break-l){
     font-size: 1.8em;
+  }
     font-weight: bold;
     color:$color-primary;
   }
@@ -77,8 +96,8 @@
 .star-3:before{content:"\2605\2605\2605\2606\2606";}
 .star-4:before{content:"\2605\2605\2605\2605\2606";}
 .star-5:before{content:"\2605\2605\2605\2605\2605";}
-
-.star-1, .star-2, .star-3, .star-4, .star-5 {
+.star-null:before{content:"\2606\2606\2606\2606\2606";}
+.star-1, .star-2, .star-3, .star-4, .star-5, .star-null {
   color:$color-primary;
   padding-right: 10px;
 }

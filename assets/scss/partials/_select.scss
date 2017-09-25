@@ -5,16 +5,15 @@
   cursor:pointer;
   font-size:1.1em;
   margin-bottom:1.5em;
-  padding:.25em 0;
+  padding:.3em .3em;
   position:relative;
   border: solid 1px $grey;
   border-radius: 5px;
-  height: 1.8em;
-  width:7em;
+  height: 2.3em;
+  width:8em;
 }
 
-.styled-select:before,
-select:before {
+.styled-select:before {
   font-family: "FontAwesome";
   border-width: 0 0 0 1px;
   content:'\f103';

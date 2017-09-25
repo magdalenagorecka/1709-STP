@@ -26,11 +26,13 @@ body{
 
 }
 
-.btn button{
+.btn {
+  margin-right: 5px;
+button{
 width:100%;
 padding:15px;
-  @media (min-width: $break-s){
 
+  @media (min-width: $break-s){
     padding: 5px 10px;
   }
   border:1px solid $color-primary;
@@ -50,14 +52,9 @@ padding:15px;
     font-size: 1.2em;
   padding-right: 5px;
   padding-left: 10px;
-}
-  /*&::after{
-    content: ' \f1cb';
   }
-  */
-
 }
-
+}
 /******** BOX ************/
 .box{
   width:100vw;
@@ -71,8 +68,8 @@ padding:15px;
     margin: 5% auto;
   }
   @media (min-width: $break-xl){
-    width:70vw;
-    height:70vh;
+    width:80vw;
+    height:90vh;
   }
 }
 

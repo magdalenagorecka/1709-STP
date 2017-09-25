@@ -5,8 +5,8 @@ $(document).ready(function() {
       $vin = $('#vin'),
       countryArray,
       jsonData,
-      wantedData,
-      i;
+      i,
+      sortOrder = 'asc';
 
   $('body').on('load',getDefault());
 
@@ -14,6 +14,7 @@ $(document).ready(function() {
     $.getJSON(vinURL, function(data){
 
         var html = "",
+        star,
         logo;
 
         jsonData = data;
@@ -37,7 +38,15 @@ $(document).ready(function() {
           }else{
           }
 */
-          var star = Math.floor(val.rate);
+
+          (function stars(){
+            if(val.rate === null){
+              star = 'null';
+            }else{
+              star = Math.floor(val.rate);
+            }
+          })();
+
           html += "<div class='vinItem'>";
           html += "<div class='vinItem__photo'>";
           html += "<img src='" + logo + "'>";
@@ -47,7 +56,7 @@ $(document).ready(function() {
           html += "<p class='vinItem__country'>" + val.country + " | " + val.region + "</p>";
           html += "<p><h3>" + val.name + "</h3></p>";
           html += "<p class='vinItem__category'><span>" + val.product + "</span> | " + val.grapes + " | " + val.productionYear + "</p>";
-          html += "<p class='vinItem__rate'><span class='star-" + star +"'></span>Rate: " + val.rate + "</p>";
+          html += "<p class='vinItem__rate'><span class='star-" + star +"'></span>Rate: " + Math.floor(val.rate*100)/100 + "</p>";
           html += "<div class='vinItem__small'><p >Sold Bottles: " + val.soldBottles + "   <a href='" + val.productUrl + "'>Product's Link</a></p>";
           html += "<p>Availability: " + val.availability + "    Ecological: " + val.ecological + "    Packaging: " + val.packaging + "</p></div>";
           html += "</div>";
@@ -88,6 +97,8 @@ $(document).ready(function() {
   });
 
 
+
+
   // select change
 
     $('#country').change(function(){
@@ -100,12 +111,9 @@ $(document).ready(function() {
           jsonData = jsonData.filter(function(i){
             return i.country === selectedItem.val();
           });
-          sortPrice();
           showJson();
       }
     }); //end country select change
-
-
 
 //***** Menu buttons **********//
   function sortPrice(){
@@ -136,19 +144,6 @@ function showJson(){
   $vin.html(html);
 }
 
-  let sortOrder = 'asc';
-
-  $('.sort__price').click(function(){
-    $(this).find('i').toggleClass('fa-caret-down fa-caret-up');
-     sortPrice();
-     showJson();
-  });
-
-  $('.sort__name').click(function(){
-    $(this).find('i').toggleClass('fa-caret-down fa-caret-up');
-    sortName();
-    showJson();
-  });
 
 
 
@@ -185,6 +180,20 @@ function showJson(){
   }else{
   }
 */
+
+
+
+  $('.sort__price').click(function(){
+    $(this).find('i').toggleClass('fa-sort-numeric-desc fa-sort-numeric-asc');
+     sortPrice();
+     showJson();
+  });
+
+  $('.sort__name').click(function(){
+    $(this).find('i').toggleClass('fa-sort-alpha-desc fa-sort-alpha-asc');
+    sortName();
+    showJson();
+  });
 
   $(".styled-select").on({mouseenter:function(){
     $pages.fadeIn();
