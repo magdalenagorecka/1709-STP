@@ -36,8 +36,6 @@ $(document).ready(function() {
             console.log(val.product);
           }
 
-
-
           html += "<div class='vinItem'>";
           html += "<div class='vinItem__photo'>";
           html += "<img src='" + logo + "'>";
@@ -87,6 +85,32 @@ $(document).ready(function() {
 
   });
 
+
+  // select change
+
+    $('#country').on('change',function(){
+
+      let selectedItem = $("#country :selected");
+      console.log("selectedItem: "+selectedItem.val());
+
+
+        if(selectedItem.val() === "default"){
+          getDefault();
+        }else if(selectedItem.val().length === 0){
+          ("#vin").html("<p>There is no vine</p>");
+        }else{
+          jsonData = jsonData.filter(function(i){
+          return i.country === $("#country :selected").val();
+        }
+      )}
+      console.log(jsonData);
+      showJson();
+      //getDefault();
+
+    });
+
+
+
 //***** Menu buttons **********//
 
 /*
@@ -126,7 +150,6 @@ console.log("selectedItem: "+selectedItem);
       jsonData = jsonData.sort(function(a,b) { return b.name.localeCompare(a.name)});
       sortOrder = 'asc';
     }
-    console.log(jsonData);
     showJson();
   });
 
@@ -174,13 +197,4 @@ console.log("selectedItem: "+selectedItem);
     html += "</div>";
 
   }
-  countryArr = $.map(jsonData, function (el) {
-    return el.country;
-  });
-  console.log(countryArr);
-
-  countryArr = countryArr.filter(function(elem, index, self) {
-    return index == self.indexOf(elem);
-  });
-  console.log(countryArr);
 });//ready
