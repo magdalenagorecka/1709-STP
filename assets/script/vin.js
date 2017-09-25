@@ -197,4 +197,8 @@ console.log("selectedItem: "+selectedItem);
     html += "</div>";
 
   }
+
+  $(".styled-select").on("click", function(){
+    $("#pages").fadeIn();
+  });
 });//ready
