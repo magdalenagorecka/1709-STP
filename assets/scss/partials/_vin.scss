@@ -3,6 +3,11 @@
   margin:20px 0;
   padding:20px 20px;
   @include shadow;
+  a{
+    color:$color-primary;
+    text-decoration: none;
+    padding: 0 10px;
+  }
   &__photo{
     text-align: center;
     padding:0 30px;
@@ -13,10 +18,34 @@
   &__info{
     padding:0 20px;
     h3{
-      font-size:1.4em;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size:1.2em;
       line-height: 1.5em;
+
     }
   }
+  &__country{
+    padding-bottom: 5px;
+    font-size: 1em;
+    font-style: italic;
+    color: lighten($font-color, 20%);
+  }
+  &__category{
+    padding: 8px 0 20px;
+    font-size: .9em;
+  }
+  &__rate{
+    font-size: .9em;
+    /*&::before{
+
+      content:'\2605';
+      color:$color-primary;
+      font-size:1.1em;
+      padding-right:.4em;
+    }*/
+  }
+
   &__small{
     padding-top: 20px;
     font-size:.9em;
@@ -42,4 +71,14 @@
 }
 .rose{
   color:pink;
+}
+.star-1:before{content:"\2605\2606\2606\2606\2606";}
+.star-2:before{content:"\2605\2605\2606\2606\2606";}
+.star-3:before{content:"\2605\2605\2605\2606\2606";}
+.star-4:before{content:"\2605\2605\2605\2605\2606";}
+.star-5:before{content:"\2605\2605\2605\2605\2605";}
+
+.star-1, .star-2, .star-3, .star-4, .star-5 {
+  color:$color-primary;
+  padding-right: 10px;
 }

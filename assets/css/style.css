@@ -49,61 +49,127 @@ h1 {
 }
 
 /* line 6, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem a {
+  color: tomato;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+/* line 11, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__photo {
   text-align: center;
   padding: 0 30px;
 }
 
-/* line 9, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 14, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__photo img {
   max-height: 150px;
 }
 
-/* line 13, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 18, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__info {
   padding: 0 20px;
 }
 
-/* line 15, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 20, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__info h3 {
-  font-size: 1.4em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2em;
   line-height: 1.5em;
 }
 
-/* line 20, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 28, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__country {
+  padding-bottom: 5px;
+  font-size: 1em;
+  font-style: italic;
+  color: #5b5b5b;
+}
+
+/* line 34, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__category {
+  padding: 8px 0 20px;
+  font-size: .9em;
+}
+
+/* line 38, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__rate {
+  font-size: .9em;
+  /*&::before{
+
+      content:'\2605';
+      color:$color-primary;
+      font-size:1.1em;
+      padding-right:.4em;
+    }*/
+}
+
+/* line 49, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__small {
   padding-top: 20px;
   font-size: .9em;
   color: #a2a2a2;
 }
 
-/* line 25, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 54, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__id {
   padding-top: 5px;
   font-size: .7em;
   color: #a2a2a2;
 }
 
-/* line 30, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 59, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__price {
   font-size: 1.8em;
   font-weight: bold;
   color: tomato;
 }
 
-/* line 37, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 66, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .red {
   background-color: #ffdd00;
 }
 
-/* line 40, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 69, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .blanc {
   color: yellow;
 }
 
-/* line 43, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 72, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .rose {
   color: pink;
+}
+
+/* line 75, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.star-1:before {
+  content: "\2605\2606\2606\2606\2606";
+}
+
+/* line 76, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.star-2:before {
+  content: "\2605\2605\2606\2606\2606";
+}
+
+/* line 77, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.star-3:before {
+  content: "\2605\2605\2605\2606\2606";
+}
+
+/* line 78, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.star-4:before {
+  content: "\2605\2605\2605\2605\2606";
+}
+
+/* line 79, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.star-5:before {
+  content: "\2605\2605\2605\2605\2605";
+}
+
+/* line 81, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.star-1, .star-2, .star-3, .star-4, .star-5 {
+  color: tomato;
+  padding-right: 10px;
 }
 
 /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
