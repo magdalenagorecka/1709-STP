@@ -10,14 +10,13 @@ $(document).ready(function() {
 
     let xmlData = $(data).find("item");
   //sort desc by default
-    xmlData.sort(function(a,b){
+    xmlData.sort((a,b) => {
       a = $(a).find("pubDate").text();
       b = $(b).find("pubDate").text();
       return new Date(b).getTime() - new Date(a).getTime();
     });
-
   //make an array
-    xmlData.each(function(){
+    xmlData.each(function() {
       let item={
           title: $(this).find("title").text(),
           pubDate: $(this).find("pubDate").text()
@@ -25,8 +24,8 @@ $(document).ready(function() {
       sortArr.push(item);
     });
     showItem();
-  });//end $.get
-
+  });
+  //display rss items
   function showItem(){
     for(var i=0; i<sortArr.length; i++){
       html += "<div  class='rss'><p><h3>" + sortArr[i].title + "</h3></p>";
@@ -34,12 +33,11 @@ $(document).ready(function() {
     }
     $rssItem.html(html);
   }
-
   //sorting button
-  $sort.click(function(){
+  $sort.click(() => {
     html='';
     $(this).find('i').toggleClass('fa-caret-down fa-caret-up');
     sortArr.reverse();
     showItem();
   });
-}) //document ready
+})

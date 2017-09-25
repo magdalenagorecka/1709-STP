@@ -1,52 +1,34 @@
 $(document).ready(function() {
 
   let vinURL = "http://vinguiden-webapp-develop.seals.schibsted.pl/api/product?ids=1",
-      $pages = $("#pages"),
-      $vin = $('#vin'),
-      countryArray,
-      jsonData,
-      i,
-       jsonDataFiltered,
-      sortOrder = 'asc';
+  $pages = $("#pages"),
+  $vin = $('#vin'),
+  countryArray,
+  jsonData,
+  i,
+  jsonDataFiltered,
+  sortOrder = 'asc';
 
-  $('body').on('load',getDefault());
+  $('body').on('load', getDefault());
 
   function getDefault(){
     $.getJSON(vinURL, function(data){
 
-        var html = "",
-        star,
-        logo;
+      var html = "",
+      star,
+      cat,
+      logo;
 
-        jsonData = data;
-        jsonDataFiltered = jsonData;
-        data.forEach(function showItems(val){
+      jsonData = data;
+      jsonDataFiltered = jsonData;
 
-          if(val.imageUrl !== null){
-            logo = val.imageUrl;
-          }else{
-            logo ='./assets/img/placeholder.png';
-          }
-
-
-        /*  console.log(data);
-          if(val.product === "Rött vin"){
-          $('#vinItem__category').addClass("red");
-        }else if(val.product === "Mousserande vin"){
-            $('#vinItem__category').addClass("blanc");
-          }else if(val.product === "Rosévin"){
-            $('#vinItem__category').addClass("rose");
-          }else{
-          }
-*/
-
-          (function stars(){
-            if(val.rate === null){
-              star = 'null';
-            }else{
-              star = Math.floor(val.rate);
-            }
-          })();
+      data.forEach(function showItems(val){
+        //setting placeholder if no img given
+        val.imageUrl !== null ? logo = val.imageUrl : logo ='./assets/img/placeholder.png';
+        //number of stars
+        val.rate === null ? star = 'null': star = Math.floor(val.rate);
+        //setting icon for wine type
+        val.product === "Rött vin" ? cat = 1 : val.product === "Vitt vin" ? cat = 2 : val.product === "Rosévin" ? cat = 3 : cat = 0;
 
           html += "<div class='vinItem'>";
           html += "<div class='vinItem__photo'>";
@@ -56,7 +38,7 @@ $(document).ready(function() {
           html += "<div class='vinItem__info'>";
           html += "<p class='vinItem__country'>" + val.country + " | " + val.region + "</p>";
           html += "<p><h3>" + val.name + "</h3></p>";
-          html += "<p class='vinItem__category'><span>" + val.product + "</span> | " + val.grapes + " | " + val.productionYear + "</p>";
+          html += "<p class='vinItem__category'><span class='cat-" + cat + "'>"+val.product+ "</span> | " + val.grapes + " | " + val.productionYear + "</p>";
           html += "<p class='vinItem__rate'><span class='star-" + star +"'></span>Rate: " + Math.floor(val.rate*100)/100 + "</p>";
           html += "<div class='vinItem__small'><p >Sold Bottles: " + val.soldBottles + "   <a href='" + val.productUrl + "'>Product's Link</a></p>";
           html += "<p>Availability: " + val.availability + "    Ecological: " + val.ecological + "    Packaging: " + val.packaging + "</p></div>";
@@ -71,11 +53,9 @@ $(document).ready(function() {
         //Array of all countries sorted a-z, filtered for duplicates
         let countryArr = $.map(data, (el) => { return el.country })
         .filter((elem, index, self) => { return index == self.indexOf(elem) })
-        .sort(function(a,b) { return a.localeCompare(b)});
+        .sort((a,b) => { return a.localeCompare(b)});
 
       }, "json");
-
-
   }//end getDefault
 
 
@@ -86,32 +66,25 @@ $(document).ready(function() {
 
 
 // on multiple select change
-  $pages.change(function(){
+  $pages.change(function() {
     let selectedPages = [];
 
-    $("#pages :selected").each(function(){
+    $("#pages :selected").each(() => {
         selectedPages.push($(this).val());
     });
     vinURL = "http://vinguiden-webapp-develop.seals.schibsted.pl/api/product?ids="+selectedPages;
     getDefault();
-
   });
-
-
-
-
   // select change
-
-    $('#country').change(function(){
+    $('#country').change(() => {
 
       let selectedItem = $("#country :selected");
       $.getJSON(vinURL, function(data){jsonData = data});
         if(selectedItem.val() === "default"){
           jsonDataFiltered = jsonData;
           getDefault();
-
         }else{
-          jsonDataFiltered = jsonData.filter(function(i){
+          jsonDataFiltered = jsonData.filter(i => {
             return i.country === selectedItem.val();
           });
           jsonData = jsonDataFiltered;
@@ -122,20 +95,20 @@ $(document).ready(function() {
 //***** Menu buttons **********//
   function sortPrice(){
      if(sortOrder === 'asc'){
-       jsonData = jsonDataFiltered.sort(function(a,b) { return a.price - b.price});
+       jsonData = jsonDataFiltered.sort((a,b) => { return a.price - b.price});
        sortOrder = 'desc';
      }else if(sortOrder === 'desc'){
-       jsonData = jsonDataFiltered.sort(function(a,b) { return b.price - a.price});
+       jsonData = jsonDataFiltered.sort((a,b) => { return b.price - a.price});
        sortOrder = 'asc';
      }
   }
 
 function sortName(){
   if(sortOrder === 'asc'){
-    jsonData = jsonDataFiltered.sort(function(a,b) { return a.name.localeCompare(b.name)});
+    jsonData = jsonDataFiltered.sort((a,b) => { return a.name.localeCompare(b.name)});
     sortOrder = 'desc';
   }else if(sortOrder === 'desc'){
-    jsonData = jsonDataFiltered.sort(function(a,b) { return b.name.localeCompare(a.name)});
+    jsonData = jsonDataFiltered.sort((a,b) => { return b.name.localeCompare(a.name)});
     sortOrder = 'asc';
   }
 }
@@ -148,15 +121,8 @@ function showJson(){
   $vin.html(html);
 }
 
-
-
-
   function itemLayout(){
-    if(jsonData[i].imageUrl !== null){
-      logo = jsonData[i].imageUrl;
-    }else{
-      logo ='./assets/img/placeholder.png';
-    }
+    jsonData[i].imageUrl !== null ? logo = jsonData[i].imageUrl : logo ='./assets/img/placeholder.png';
 
     html += "<div class='vinItem'>";
     html += "<div class='vinItem__photo'>";
@@ -187,21 +153,21 @@ function showJson(){
 
 
 
-  $('.sort__price').click(function(){
+  $('.sort__price').click(() => {
     $(this).find('i').toggleClass('fa-sort-numeric-desc fa-sort-numeric-asc');
      sortPrice();
      showJson();
   });
 
-  $('.sort__name').click(function(){
+  $('.sort__name').click(() => {
     $(this).find('i').toggleClass('fa-sort-alpha-desc fa-sort-alpha-asc');
     sortName();
     showJson();
   });
 
-  $(".styled-select").on({mouseenter:function(){
+  $(".styled-select").on({mouseenter:() => {
     $pages.fadeIn();
-  }, mouseleave:function(){
+  }, mouseleave:() => {
     $pages.fadeOut();
   }});
 });//ready

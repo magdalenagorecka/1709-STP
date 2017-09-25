@@ -29,9 +29,14 @@
   }
   &__photo{
     text-align: center;
-    padding:0 30px;
+    padding:0 10px;
+
     img{
       max-height: 150px;
+    }
+    @media (min-width: $break-l){
+      
+      padding:0 30px;
     }
   }
   &__info{
@@ -74,9 +79,10 @@
   }
   &__price{
     font-size: 1.4em;
+    @include grad($grad);
     @media (min-width: $break-l){
-    font-size: 1.8em;
-  }
+      font-size: 1.8em;
+    }
     font-weight: bold;
     color:$color-primary;
   }
@@ -101,3 +107,7 @@
   color:$color-primary;
   padding-right: 10px;
 }
+
+.cat-1{color:#b71c1c};
+.cat-2{color:#FFB300};
+.cat-3{color:#F48FB1};
