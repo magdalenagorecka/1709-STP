@@ -13,9 +13,9 @@ $(document).ready(function() {
     xmlData.sort(function(a,b){
       a = $(a).find("pubDate").text();
       b = $(b).find("pubDate").text();
-      //return(b.localeCompare(a));
       return new Date(b).getTime() - new Date(a).getTime();
     });
+
   //make an array
     xmlData.each(function(){
       let item={
@@ -24,10 +24,10 @@ $(document).ready(function() {
         }
       sortArr.push(item);
     });
-    sortItem();
-  });
+    showItem();
+  });//end $.get
 
-  function sortItem(){
+  function showItem(){
     for(var i=0; i<sortArr.length; i++){
       html += "<div  class='rss'><p><h3>" + sortArr[i].title + "</h3></p>";
       html += "<p class='pubDate'>" + sortArr[i].pubDate + "</p></div>";
@@ -40,6 +40,6 @@ $(document).ready(function() {
     html='';
     $(this).find('i').toggleClass('fa-caret-down fa-caret-up');
     sortArr.reverse();
-    sortItem();
+    showItem();
   });
 }) //document ready
