@@ -3,6 +3,15 @@
   margin:10px auto;
   padding: 20px 10px;
   border-bottom: 1px solid $color-bg;
+  &:hover{
+    background: $grad;
+    color: white;
+    border-radius: 5px;
+    @include shadow;
+    .pubDate{
+      color:$color-bg;
+    }
+  }
 }
 
 .pubDate{
@@ -14,8 +23,4 @@
 
 h3{
   font-weight:400;
-}
-
-#sort{
-
 }

@@ -5,7 +5,7 @@
   cursor:pointer;
   font-size:1.1em;
   margin-bottom:1.5em;
-  padding:.3em .3em;
+  padding:.3em;
   position:relative;
   border: solid 1px $grey;
   border-radius: 5px;
@@ -33,19 +33,19 @@
     top:0px;
     left:0px;
     z-index: 100;
+    display:none;
+    width:80%;
+    margin:1px;
+    padding:0 2em;
     background-color:white;
     border:none;
     cursor:pointer;
     color: $font-color;
-    display:none;
     font-family: $font;
-    font-size:1em;
-    margin:1px;
-    padding:0 2em 0 2em;
-    width:90%;
+    font-size:.8em;
     border:1px solid $color-bg;
     @include shadow;
-
+    outline-color: rgba(255,99,71,0.2);
 }
 
 .selectedPage{
@@ -61,11 +61,9 @@ select{
   -webkit-appearance:none;
   cursor:pointer;
   display:inline-block;
-  font-size:1em;
   width:100%;
   padding:15px;
     @media (min-width: $break-s){
-
       padding: 5px 10px;
     }
     border:1px solid $color-primary;

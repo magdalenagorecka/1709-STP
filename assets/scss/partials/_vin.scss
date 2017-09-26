@@ -4,20 +4,24 @@
   flex-grow:1;
   flex-wrap: wrap;
 }
+.select__cont{
+  display: flex;
+  flex-direction: row;
+}
+.pl-1{
+  padding-left:1em;
+}
 .vinItem{
   display: inline-flex;
   flex-direction: row;
-  flex-grow:1;
+  flex-grow:0;
   flex-wrap: wrap;
   width:100%;
   &:hover{
-    border-radius: 5px;
-    -webkit-box-shadow: 3px 3px 18px -5px rgba(255,99,71,0.5);
-    -moz-box-shadow: 3px 3px 18px -5px rgba(255,99,71,0.5);
-    box-shadow: 3px 3px 18px -5px rgba(255,99,71,0.5);
+    @include glow;
   }
   @media (min-width: $break-l){
-    width:40%;
+    width:50%;
   }
   margin:20px 0;
   padding:20px 20px;
@@ -35,7 +39,7 @@
       max-height: 150px;
     }
     @media (min-width: $break-l){
-      
+
       padding:0 30px;
     }
   }

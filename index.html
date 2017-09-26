@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>STP - Front End Task NWT</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700," rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/84589530e3.js"></script>
-
   </head>
   <body>
     <div class="box">
@@ -21,7 +18,8 @@
 
           <div class="content" id="content-01">
             <div class="header__vin">
-              <h1>VINGUIDEN</h1>
+              <a href="JavaScript: location.reload(true);" class="reload"><h1>VINGUIDEN</h1></a>
+              <div class="select__cont">
               <div class="styled-select" for="pages">
                 <span class="selectedPage">SELECT PAGE</span>
                 <select name="pages" id="pages" multiple size=24>
@@ -51,6 +49,9 @@
                   <option value='24'>24</option>
                 </select>
               </div>
+              <div class="vinItem__id"><p class=" pl-1">Hold down Cmd(OS)/Ctrl(Win) key<br/> to select multiple pages</p></div>
+            </div>
+
               <div class="menu">
                 <div class="btn sort">
                   <button class="sort__name">SORT BY NAME <i class="fa fa-sort-alpha-asc" ></i></button>
@@ -86,20 +87,17 @@
               </div>
             </div>
             <div>
-
-
           </div>
-            <div id="vin"></div>
+          <div id="vin"></div>
           </div>
 <!-- ******** VG RSS ************ -->
           <div class="content" id="content-02">
             <div class="header__vg">
-              <h1>VG RSS</h1>
+              <a href="JavaScript: location.reload(true);" class="reload"><h1>VG RSS</h1></a>
               <div class="btn sort" id="sort">
                 <button>SORT BY DATE <i class="fa fa-caret-up" ></i></button>
               </div>
             </div>
-
             <div class="rssItem"></div>
           </div>
 

@@ -1,9 +1,6 @@
 # 1709-STP
 
-Source Assets
+Source Assets:
 
-Font 'Open Sans'
-
-Font Awesome
-
-Grape by Chanut is Industries from the Noun Project
+Google Font 'Open Sans' https://fonts.google.com/
+Font Awesome http://fontawesome.io/
