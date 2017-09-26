@@ -1,23 +1,22 @@
-$(document).ready(function() {
+//$(document).ready(function() {
 
-  let rssUrl = "http://www.vg.no/rss/feed/",
+  var rssUrl = "http://www.vg.no/rss/feed/",
       $rssItem = $(".rssItem"),
       sortArr =[],
       $sort = $("#sort"),
       html="";
-  //using xml parsing funcionality of jquery
-  $.get(rssUrl, function(data){
 
-    let xmlData = $(data).find("item");
+  $.get(rssUrl, function(data){
+    var xmlData = $(data).find("item");
   //sort desc by default
-    xmlData.sort((a,b) => {
+    xmlData.sort(function(a,b){
       a = $(a).find("pubDate").text();
       b = $(b).find("pubDate").text();
       return new Date(b).getTime() - new Date(a).getTime();
     });
   //make an array
     xmlData.each(function() {
-      let item={
+      var item={
           title: $(this).find("title").text(),
           pubDate: $(this).find("pubDate").text()
         }
@@ -25,6 +24,7 @@ $(document).ready(function() {
     });
     showItem();
   });
+
   //display rss items
   function showItem(){
     for(var i=0; i<sortArr.length; i++){
@@ -33,11 +33,12 @@ $(document).ready(function() {
     }
     $rssItem.html(html);
   }
+
   //sorting button
-  $sort.click(() => {
+  $sort.click(function(){
     html='';
     $(this).find('i').toggleClass('fa-caret-down fa-caret-up');
     sortArr.reverse();
     showItem();
   });
-})
+//})
