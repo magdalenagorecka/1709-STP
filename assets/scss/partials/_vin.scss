@@ -17,41 +17,56 @@
   flex-grow:0;
   flex-wrap: wrap;
   width:100%;
+  margin:0;
+  padding:20px 20px;
+  @include shadow;
   &:hover{
     @include glow;
   }
-  @media (min-width: $break-l){
+  @media #{$desktop}{
     width:50%;
   }
-  @media (min-width: 1920px){
+  @media #{$xldesktop}{
     width:33%;
   }
-  margin:20px 0;
-  padding:20px 20px;
-  @include shadow;
+
   a{
     color:$color-primary;
     text-decoration: none;
     padding: 0 10px;
   }
   &__photo{
-    text-align: center;
-    padding:0 10px;
-
+    text-align: left;
+    width: 30%;
     img{
       max-height: 150px;
       max-width: 50px;
+      margin-right: 40px;
     }
-    @media (min-width: $break-l){
+    @media #{$mobile-l}{
+      width: 15%;
+    }
+    @media #{$desktop}{
+      width:10%;
+      padding:0 10px;
+    }
+    @media #{$lgdesktop}{
 
-      padding:0 30px;
     }
   }
+  &__id{
+    padding-top:5px;
+    font-size: .7em;
+    color:$grey;
+  }
   &__info{
-    padding:0 20px 0 0;
+    padding:0;
     width:70%;
-    @media (min-width: $break-l){
-      width:50%;
+    @media #{$mobile-l}{
+      width:60%
+    }
+    @media #{$desktop}{
+      width:55%;
     }
     h3{
       text-transform: uppercase;
@@ -80,33 +95,38 @@
     font-size:.9em;
     color:$grey
   }
-  &__id{
-    padding-top:5px;
-    font-size: .7em;
-    color:$grey;
-  }
+
   &__price{
     width:100%;
     margin:.3em auto;
-    padding:.6em 0;
+    padding:.25em;
+    border:1px solid $color-bg;
     border-radius: $radius;
     color:$color-primary;
     font-size: 1.5em;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
     &::before{
       content:"Price:";
-      display: inline;
+      padding-right:.8em;
       font-weight: lighter;
-      font-size: .7em;
+      font-size: .6em;
     }
-    @media (min-width: $break-s){
-      width:30%;
-      font-size: 1.8em;
+    @media #{$mobile-l}{
+      width:20%;
+      font-size: 1.2em;
       font-weight: bold;
-      //@include grad($grad);
       color:$color-primary;
       padding:.6em 0;
+      white-space: normal;
+      border: 0;
+
+    }
+    @media #{$tablet}{
+      width:15%;
+    }
+    @media #{$desktop}{
+      width:10%;
     }
 
   }

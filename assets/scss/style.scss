@@ -17,19 +17,23 @@ body{
 .header__vin,
 .menu{
   display: block;
-  @media (min-width: $break-s){
+  @media #{$tablet}{
+    display: block;
+  }
+  @media #{$mobile-l}{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    vertical-align: baseline;
   }
-
+}
+.menu{
 }
 
 .btn {
   margin-right: 5px;
   button{
     width:100%;
+    margin-top:10px;
     padding:15px;
     border:1px solid $color-primary;
     border-radius: 5px;
@@ -38,14 +42,11 @@ body{
     font-weight: 700;
     color:$color-primary;
     text-decoration: none;
-    @media (min-width: $break-s){
+    @media #{$mobile-l}{
       padding: 5px 10px;
     }
     &:hover{
-      background: $grad;
-      background: $grad-o;
-      background: $grad-moz;
-      background: $grad-webkit;
+      @include bg-grad($grad);
       color: white;
     }
     .fa {
@@ -62,12 +63,12 @@ body{
   margin:0 auto;
   background-color: white;
   @include shadow;
-  @media (min-width:$break-m){
+  @media #{$tablet}{
     width:90vw;
     height:90vh;
     margin: 5% auto;
   }
-  @media (min-width: $break-xl){
+  @media #{$lgdesktop}{
     width:80vw;
     height:90vh;
   }
@@ -95,7 +96,7 @@ label{
   @media (min-width:321px){
     padding:30px 50px;
   }
-  @media (min-width:$break-s){
+  @media #{$mobile-l}{
     width:30%;
   }
 }

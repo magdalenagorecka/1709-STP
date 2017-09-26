@@ -39,12 +39,10 @@
         html += "<p><h3>" + val.name + "</h3></p>";
         html += "<p class='vinItem__category'><span class='cat-" + cat + "'>"+val.product+ "</span> | " + val.grapes + " | " + val.productionYear + "</p>";
         html += "<p class='vinItem__rate'><span class='star-" + star +"'></span>Rate: " + Math.floor(val.rate*100)/100 + "</p>";
-        html += "<div class='vinItem__small'><p >Sold Bottles: " + val.soldBottles + "   <a href='" + val.productUrl + "'>Product's Link</a></p>";
-        html += "<p>Availability: " + val.availability + "    Ecological: " + val.ecological + "    Packaging: " + val.packaging + "</p></div>";
+        html += "<div class='vinItem__small'><p >Sold Bottles: " + val.soldBottles + "   <a href='" + val.productUrl + "'>Product's Link</a> ";
+        html += "Availability: " + val.availability + "    Ecological: " + val.ecological + "    Packaging: " + val.packaging + "</p></div>";
         html += "</div>";
-        html += "<div  class='vinItem__price'><p>" + val.price + " kr </p>";
-        html += "</div>";
-        html += "</div>";
+        html += "<div  class='vinItem__price'>" + val.price + " kr </div></div>";
       });
       $vin.html(html);
 
@@ -128,12 +126,10 @@ function showJson(){
     html += "<p><h3>" + jsonData[i].name + "</h3></p>";
     html += "<p class='vinItem__category'><span class='cat-" + cat + "'>"+jsonData[i].product+ "</span> | " + jsonData[i].grapes + " | " + jsonData[i].productionYear + "</p>";
     html += "<p class='vinItem__rate'><span class='star-" + star +"'></span>Rate: " + Math.floor(jsonData[i].rate*100)/100 + "</p>";
-    html += "<div class='vinItem__small'><p >Sold Bottles: " + jsonData[i].soldBottles + "   <a href='" + jsonData[i].productUrl + "'>Product's Link</a></p>";
-    html += "<p>Availability: " + jsonData[i].availability + "    Ecological: " + jsonData[i].ecological + "    Packaging: " + jsonData[i].packaging + "</p></div>";
+    html += "<div class='vinItem__small'><p >Sold Bottles: " + jsonData[i].soldBottles + "   <a href='" + jsonData[i].productUrl + "'>Product's Link</a> ";
+    html += "Availability: " + jsonData[i].availability + "    Ecological: " + jsonData[i].ecological + "    Packaging: " + jsonData[i].packaging + "</p></div>";
     html += "</div>";
-    html += "<div  class='vinItem__price'><p>" + jsonData[i].price + " kr </p>";
-    html += "</div>";
-    html += "</div>";
+    html += "<div  class='vinItem__price'>" + jsonData[i].price + " kr </div></div>";
   }
 
   $('.sort__price').click(function(){

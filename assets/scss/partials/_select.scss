@@ -4,6 +4,7 @@
   color: $grey;
   cursor:pointer;
   font-size:1.1em;
+  font-weight: 600;
   margin-bottom:1.5em;
   padding:.3em;
   position:relative;
@@ -24,28 +25,29 @@
   pointer-events:none;
   right:.35em;
 }
-
+#pages, select{
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  cursor:pointer;
+}
 #pages {
-    appearance:none;
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    position:absolute;
-    top:2.3em;
-    left:0px;
-    z-index: 100;
-    display:none;
-    width:8em;
-    margin:1px;
-    padding:0 2em;
-    background-color:white;
-    border:none;
-    cursor:pointer;
-    color: $font-color;
-    font-family: $font;
-    font-size:.8em;
-    border:1px solid $color-bg;
-    @include shadow;
-    outline-color: rgba(255,99,71,0.2);
+  position:absolute;
+  top:2.3em;
+  left:0px;
+  z-index: 100;
+  display:none;
+  width:8em;
+  margin:1px;
+  padding:0 2em;
+  background-color:white;
+  border:none;
+  color: $font-color;
+  font-family: $font;
+  font-size:.8em;
+  border:1px solid $color-bg;
+  @include shadow;
+  outline-color: rgba(255,99,71,0.2);
 }
 
 .selectedPage{
@@ -58,32 +60,30 @@
 
 //************ select country ***********/
 select{
-  appearance:none;
-  -moz-appearance:none;
-  -webkit-appearance:none;
-  cursor:pointer;
   display:inline-block;
   width:100%;
+  margin-top:10px;
   padding:15px;
-    @media (min-width: $break-s){
-      padding: 5px 10px;
-    }
-    border:1px solid $color-primary;
-    border-radius: $radius;
+  border:1px solid $color-primary;
+  border-radius: $radius;
+  background-color: white;
+  font-size: .8em;
+  font-weight: 700;
+  color:$color-primary;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color .5s;
+  -webkit-transition:background-color .5s;
+  @media #{$mobile-l}{
+    padding: 5px 10px;
+  }
+  &:hover{
     background-color: white;
-    font-size: .8em;
-    font-weight: 700;
-    color:$color-primary;
-    text-decoration: none;
-    transition: background-color .5s;
-    -webkit-transition:background-color .5s;
-    &:hover{
-      background-color: tomato;
-      color: white;
-    }
-    .fa {
-      font-size: 1.2em;
-      padding-right: 5px;
-      padding-left: 10px;
+    color: $color-primary;
+  }
+  .fa {
+    font-size: 1.2em;
+    padding-right: 5px;
+    padding-left: 10px;
   }
 }

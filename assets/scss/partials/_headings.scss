@@ -3,7 +3,7 @@ h1{
   text-align: center;
   padding-bottom: 20px;
   display: none;
-  @media (min-width: $break-s){
+  @media #{$mobile-l}{
     display: inline;
     text-align: left;
   }

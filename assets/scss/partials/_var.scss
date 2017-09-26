@@ -14,3 +14,10 @@ $break-l: 992px;//desktop
 $break-xl: 1200px; //large desktop
 
 $radius: 5px;
+
+$mobile-p:"(max-width:575px)";
+$mobile-l: "(min-width:576px)";
+$tablet: "(min-width:768px)";
+$desktop: "(min-width:992px)";
+$lgdesktop: "(min-width:1200px)";
+$xldesktop: "(min-width:1920px)";
