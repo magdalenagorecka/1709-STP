@@ -23,6 +23,9 @@
   @media (min-width: $break-l){
     width:50%;
   }
+  @media (min-width: 1920px){
+    width:33%;
+  }
   margin:20px 0;
   padding:20px 20px;
   @include shadow;
@@ -48,7 +51,7 @@
     padding:0 20px 0 0;
     width:70%;
     @media (min-width: $break-l){
-      width:60%;
+      width:50%;
     }
     h3{
       text-transform: uppercase;
@@ -83,31 +86,39 @@
     color:$grey;
   }
   &__price{
-    font-size: 1.4em;
-    @include grad($grad);
-    @media (min-width: $break-l){
-      font-size: 1.8em;
-    }
-    font-weight: bold;
+    width:100%;
+    margin:.3em auto;
+    padding:.6em 0;
+    border-radius: $radius;
     color:$color-primary;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: center;
+    &::before{
+      content:"Price:";
+      display: inline;
+      font-weight: lighter;
+      font-size: .7em;
+    }
+    @media (min-width: $break-s){
+      width:30%;
+      font-size: 1.8em;
+      font-weight: bold;
+      //@include grad($grad);
+      color:$color-primary;
+      padding:.6em 0;
+    }
+
   }
 }
 
-.red{
-  background-color: #ffdd00;
-}
-.blanc{
-  color:yellow;
-}
-.rose{
-  color:pink;
-}
 .star-1:before{content:"\2605\2606\2606\2606\2606";}
 .star-2:before{content:"\2605\2605\2606\2606\2606";}
 .star-3:before{content:"\2605\2605\2605\2606\2606";}
 .star-4:before{content:"\2605\2605\2605\2605\2606";}
 .star-5:before{content:"\2605\2605\2605\2605\2605";}
 .star-null:before{content:"\2606\2606\2606\2606\2606";}
+
 .star-1, .star-2, .star-3, .star-4, .star-5, .star-null {
   color:$color-primary;
   padding-right: 10px;

@@ -149,6 +149,6 @@ function showJson(){
   });
 
   $(".styled-select").on({
-    mouseenter:(function(){$pages.fadeIn()}), mouseleave:(function(){ $pages.fadeOut()})
+    click:(function(){$pages.slideDown()}), mouseleave:(function(){ $pages.slideUp()})
   });
 //});//ready

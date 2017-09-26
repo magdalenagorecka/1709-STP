@@ -8,7 +8,7 @@
   padding:.3em;
   position:relative;
   border: solid 1px $grey;
-  border-radius: 5px;
+  border-radius: $radius;
   height: 2.3em;
   width:8em;
 }
@@ -30,11 +30,11 @@
     -moz-appearance:none;
     -webkit-appearance:none;
     position:absolute;
-    top:0px;
+    top:2.3em;
     left:0px;
     z-index: 100;
     display:none;
-    width:80%;
+    width:8em;
     margin:1px;
     padding:0 2em;
     background-color:white;
@@ -49,9 +49,11 @@
 }
 
 .selectedPage{
-  padding:0;
+  padding-left:1em;
   margin:0;
-  font-size: .85em;
+  font-family: $font;
+  font-size: .75em;
+  font-weight: 400;
 }
 
 //************ select country ***********/
@@ -67,7 +69,7 @@ select{
       padding: 5px 10px;
     }
     border:1px solid $color-primary;
-    border-radius: 5px;
+    border-radius: $radius;
     background-color: white;
     font-size: .8em;
     font-weight: 700;
@@ -81,7 +83,7 @@ select{
     }
     .fa {
       font-size: 1.2em;
-    padding-right: 5px;
-    padding-left: 10px;
+      padding-right: 5px;
+      padding-left: 10px;
   }
 }

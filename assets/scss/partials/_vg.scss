@@ -6,7 +6,7 @@
   &:hover{
     background: $grad;
     color: white;
-    border-radius: 5px;
+    border-radius: $radius;
     @include shadow;
     .pubDate{
       color:$color-bg;
@@ -19,8 +19,4 @@
   color:$grey;
   font-weight: 300;
   font-style: italic;
-}
-
-h3{
-  font-weight:400;
 }
