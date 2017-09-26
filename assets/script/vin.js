@@ -74,6 +74,7 @@ $(document).ready(function() {
     });
     vinURL = "http://vinguiden-webapp-develop.seals.schibsted.pl/api/product?ids="+selectedPages;
     getDefault();
+    $('#country').val("default");
   });
   // select change
     $('#country').change(() => {
@@ -122,34 +123,32 @@ function showJson(){
 }
 
   function itemLayout(){
+    //setting placeholder if no img given
     jsonData[i].imageUrl !== null ? logo = jsonData[i].imageUrl : logo ='./assets/img/placeholder.png';
+    //number of stars
+    jsonData[i].rate === null ? star = 'null': star = Math.floor(jsonData[i].rate);
+    //setting icon for wine type
+    jsonData[i].product === "Rött vin" ? cat = 1 : jsonData[i].product === "Vitt vin" ? cat = 2 : jsonData[i].product === "Rosévin" ? cat = 3 : cat = 0;
 
-    html += "<div class='vinItem'>";
-    html += "<div class='vinItem__photo'>";
-    html += "<img src='" + logo + "'>";
-    html += "<p class='vinItem__id'>" + jsonData[i].id + "</p>";
-    html += "</div>";
-    html += "<div class='vinItem__info'>";
-    html += "<p>" + jsonData[i].country + " / " + jsonData[i].region + "</p>";
-    html += "<p><h3>" + jsonData[i].name + "</h3></p>";
-    html += "<p><span id='vinItem__category'>" + jsonData[i].product + "</span> | " + jsonData[i].grapes + " | " + jsonData[i].productionYear + "</p>";
-    html += "<p class='vinItem__rate'>Rate: " + jsonData[i].rate + "</p>";
-    html += "<div class='vinItem__small'><p >Sold Bottles: " + jsonData[i].soldBottles + "   <a href='" + jsonData[i].productUrl + "'>Product's Link</a></p>";
-    html += "<p>Availability: " + jsonData[i].availability + "    Ecological: " + jsonData[i].ecological + "    Packaging: " + jsonData[i].packaging + "</p></div>";
-    html += "</div>";
-    html += "<div  class='vinItem__price'><p>" + jsonData[i].price + " kr </p>";
-    html += "</div>";
-    html += "</div>";
-  }
-/*  if(jsonData.product === "Rött vin"){
-  $('.vinItem__info').addClass("red");
-}else if(jsonData.product === "Mousserande vin"){
-    $('#vinItem__category').addClass("blanc");
-  }else if(jsonData.product === "Rosévin"){
-    $('#vinItem__category').addClass("rose");
-  }else{
-  }
-*/
+      html += "<div class='vinItem'>";
+      html += "<div class='vinItem__photo'>";
+      html += "<img src='" + logo + "'>";
+      html += "<p class='vinItem__id'>" + jsonData[i].id + "</p>";
+      html += "</div>";
+      html += "<div class='vinItem__info'>";
+      html += "<p class='vinItem__country'>" + jsonData[i].country + " | " + jsonData[i].region + "</p>";
+      html += "<p><h3>" + jsonData[i].name + "</h3></p>";
+      html += "<p class='vinItem__category'><span class='cat-" + cat + "'>"+jsonData[i].product+ "</span> | " + jsonData[i].grapes + " | " + jsonData[i].productionYear + "</p>";
+      html += "<p class='vinItem__rate'><span class='star-" + star +"'></span>Rate: " + Math.floor(jsonData[i].rate*100)/100 + "</p>";
+      html += "<div class='vinItem__small'><p >Sold Bottles: " + jsonData[i].soldBottles + "   <a href='" + jsonData[i].productUrl + "'>Product's Link</a></p>";
+      html += "<p>Availability: " + jsonData[i].availability + "    Ecological: " + jsonData[i].ecological + "    Packaging: " + jsonData[i].packaging + "</p></div>";
+      html += "</div>";
+      html += "<div  class='vinItem__price'><p>" + jsonData[i].price + " kr </p>";
+      html += "</div>";
+      html += "</div>";
+}
+
+
 
 
 
