@@ -50,9 +50,6 @@
 
       }, "json");
   }
-
-    //  $("#country").append('<option value=' + value[i] + '>' + countryArr[i] + '</option>');
-
 // on multiple select change
   $pages.change(function(){
     var selectedPages = [];

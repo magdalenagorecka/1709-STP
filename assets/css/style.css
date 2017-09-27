@@ -8,12 +8,14 @@
 
 /* line 6, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vg.scss */
 .rss:hover {
+  background: -webkit-gradient(linear, left top, right top, from(tomato), color-stop(80%, coral));
+  background: -webkit-linear-gradient(left, tomato, coral 80%);
+  background: -o-linear-gradient(left, tomato, coral 80%);
   background: linear-gradient(to right, tomato, coral 80%);
   color: white;
   border-radius: 5px;
   border-radius: 5px;
   -webkit-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
   box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
 }
 
@@ -37,9 +39,11 @@
 
 /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_headings.scss */
 h1 {
+  background: -webkit-gradient(linear, left top, right top, from(tomato), color-stop(80%, coral));
+  background: -webkit-linear-gradient(left, tomato, coral 80%);
+  background: -o-linear-gradient(left, tomato, coral 80%);
   background: linear-gradient(to right, tomato, coral 80%);
   background: -o-linear-gradient(to right, tomato, coral 80%);
-  background: -moz-linear-gradient(to right, tomato, coral 80%);
   background: -webkit-linear-gradient(to right, tomato, coral 80%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -72,16 +76,29 @@ h3 {
 
 /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 #vin {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /* line 7, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .select__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 /* line 11, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
@@ -91,16 +108,23 @@ h3 {
 
 /* line 14, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-direction: row;
-  flex-grow: 0;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   margin: 0;
   padding: 20px 20px;
   border-radius: 5px;
   -webkit-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
   box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
 }
 
@@ -108,7 +132,6 @@ h3 {
 .vinItem:hover {
   border-radius: 5px;
   -webkit-box-shadow: 3px 3px 18px -5px rgba(255, 99, 71, 0.5);
-  -moz-box-shadow: 3px 3px 18px -5px rgba(255, 99, 71, 0.5);
   box-shadow: 3px 3px 18px -5px rgba(255, 99, 71, 0.5);
 }
 
@@ -419,7 +442,6 @@ h3 {
   border: 1px solid whitesmoke;
   border-radius: 5px;
   -webkit-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
   box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
   outline-color: rgba(255, 99, 71, 0.2);
 }
@@ -446,6 +468,8 @@ h3 {
 @media (min-width: 992px) {
   /* line 63, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
   .select__id {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: right;
   }
@@ -461,29 +485,44 @@ h3 {
 
 /* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 .select__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 @media (min-width: 768px) {
   /* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
   .select__cont {
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
 @media (min-width: 992px) {
   /* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
   .select__cont {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
 @media (min-width: 1200px) {
   /* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
   .select__cont {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-right: 3em;
   }
 }
@@ -491,8 +530,12 @@ h3 {
 @media (min-width: 1200px) {
   /* line 95, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
   .select__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -510,6 +553,7 @@ select {
   color: tomato;
   text-decoration: none;
   text-align: center;
+  -o-transition: background-color .5s;
   transition: background-color .5s;
   -webkit-transition: background-color .5s;
 }
@@ -538,7 +582,8 @@ select .fa {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* line 9, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
@@ -570,9 +615,14 @@ body {
   .header__vg,
   .header__vin,
   .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -604,9 +654,11 @@ body {
 
 /* line 48, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .btn button:hover {
+  background: -webkit-gradient(linear, left top, right top, from(tomato), color-stop(80%, coral));
+  background: -webkit-linear-gradient(left, tomato, coral 80%);
+  background: -o-linear-gradient(left, tomato, coral 80%);
   background: linear-gradient(to right, tomato, coral 80%);
   background: -o-linear-gradient(to right, tomato, coral 80%);
-  background: -moz-linear-gradient(to right, tomato, coral 80%);
   background: -webkit-linear-gradient(to right, tomato, coral 80%);
   color: white;
 }
@@ -627,7 +679,6 @@ body {
   background-color: white;
   border-radius: 5px;
   -webkit-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
   box-shadow: 3px 3px 22px -9px rgba(0, 0, 0, 0.3);
 }
 
@@ -670,9 +721,11 @@ label {
 
 /* line 90, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 label:hover {
+  background: -webkit-gradient(linear, left top, right top, from(tomato), color-stop(80%, coral));
+  background: -webkit-linear-gradient(left, tomato, coral 80%);
+  background: -o-linear-gradient(left, tomato, coral 80%);
   background: linear-gradient(to right, tomato, coral 80%);
   background: -o-linear-gradient(to right, tomato, coral 80%);
-  background: -moz-linear-gradient(to right, tomato, coral 80%);
   background: -webkit-linear-gradient(to right, tomato, coral 80%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -711,9 +764,11 @@ input {
 /* line 111, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 input:checked + label {
   color: tomato;
+  background: -webkit-gradient(linear, left top, right top, from(tomato), color-stop(80%, coral));
+  background: -webkit-linear-gradient(left, tomato, coral 80%);
+  background: -o-linear-gradient(left, tomato, coral 80%);
   background: linear-gradient(to right, tomato, coral 80%);
   background: -o-linear-gradient(to right, tomato, coral 80%);
-  background: -moz-linear-gradient(to right, tomato, coral 80%);
   background: -webkit-linear-gradient(to right, tomato, coral 80%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -749,5 +804,3 @@ input:checked + label {
   color: tomato;
   text-decoration: none;
 }
-
-/*# sourceMappingURL=../css/style.map */
