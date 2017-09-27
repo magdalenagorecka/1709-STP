@@ -58,7 +58,6 @@
     var selectedPages = [];
     $("#pages :selected").each(function(){
       selectedPages.push($(this).val());
-      console.log(selectedPages);
     });
     vinURL = "http://vinguiden-webapp-develop.seals.schibsted.pl/api/product?ids="+selectedPages;
     getDefault();
