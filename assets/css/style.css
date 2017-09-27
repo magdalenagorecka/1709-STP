@@ -23,6 +23,11 @@
 }
 
 /* line 17, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vg.scss */
+.rssItem {
+  margin-top: 10px;
+}
+
+/* line 20, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vg.scss */
 .pubDate {
   padding-top: 10px;
   color: #a2a2a2;
@@ -403,7 +408,7 @@ h3 {
   left: 0px;
   z-index: 100;
   display: none;
-  width: 100%;
+  width: 80%;
   margin: 1px;
   padding: 0 2em;
   background-color: white;
@@ -655,7 +660,15 @@ label {
   text-align: center;
 }
 
-/* line 87, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 78, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  label {
+    background: white;
+    color: #a2a2a2;
+  }
+}
+
+/* line 90, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 label:hover {
   background: linear-gradient(to right, tomato, coral 80%);
   background: -o-linear-gradient(to right, tomato, coral 80%);
@@ -669,8 +682,8 @@ label:hover {
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 78, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
-  label {
+  /* line 90, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  label:hover {
     background: white;
     color: tomato;
   }
@@ -690,12 +703,12 @@ label:hover {
   }
 }
 
-/* line 104, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 109, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 input {
   display: none;
 }
 
-/* line 106, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 111, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 input:checked + label {
   color: tomato;
   background: linear-gradient(to right, tomato, coral 80%);
@@ -709,13 +722,21 @@ input:checked + label {
   border-bottom: 3px solid tomato;
 }
 
-/* line 114, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 111, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+  input:checked + label {
+    background: white;
+    color: tomato;
+  }
+}
+
+/* line 123, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .content {
   display: none;
   border-top: 1px solid #ddd;
 }
 
-/* line 119, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 128, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 #tab-01:checked ~ #content-01,
 #tab-02:checked ~ #content-02 {
   display: block;
@@ -723,7 +744,7 @@ input:checked + label {
   background: white;
 }
 
-/* line 126, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
+/* line 135, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/style.scss */
 .reload {
   color: tomato;
   text-decoration: none;
