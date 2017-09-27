@@ -160,7 +160,7 @@ h3 {
 /* line 60, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__id {
   display: block;
-  text-align: center;
+  text-align: left;
   padding-top: 5px;
   font-size: .7em;
   color: #a2a2a2;
@@ -365,10 +365,17 @@ h3 {
   border: solid 1px #a2a2a2;
   border-radius: 5px;
   height: 2.3em;
-  width: 8em;
+  width: 100%;
 }
 
-/* line 17, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+@media (min-width: 576px) {
+  /* line 1, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  .styled-select {
+    width: 8em;
+  }
+}
+
+/* line 20, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 .styled-select:before {
   font-family: "FontAwesome";
   border-width: 0 0 0 1px;
@@ -381,7 +388,7 @@ h3 {
   right: .35em;
 }
 
-/* line 28, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+/* line 31, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 #pages, select {
   appearance: none;
   -moz-appearance: none;
@@ -389,14 +396,14 @@ h3 {
   cursor: pointer;
 }
 
-/* line 34, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+/* line 37, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 #pages {
   position: absolute;
   top: 2.3em;
   left: 0px;
   z-index: 100;
   display: none;
-  width: 8em;
+  width: 100%;
   margin: 1px;
   padding: 0 2em;
   background-color: white;
@@ -412,7 +419,7 @@ h3 {
   outline-color: rgba(255, 99, 71, 0.2);
 }
 
-/* line 53, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+/* line 56, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 .selectedPage {
   padding-left: 1em;
   margin: 0;
@@ -421,7 +428,70 @@ h3 {
   font-weight: 400;
 }
 
-/* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+/* line 63, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+.select__id {
+  display: none;
+  text-align: left;
+  padding: 5px;
+  margin: 0 5px;
+  font-size: .7em;
+  color: #a2a2a2;
+}
+
+@media (min-width: 992px) {
+  /* line 63, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  .select__id {
+    display: flex;
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 63, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  .select__id {
+    text-align: left;
+    font-size: .6em;
+  }
+}
+
+/* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+.select__cont {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (min-width: 768px) {
+  /* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  .select__cont {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  .select__cont {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  .select__cont {
+    flex-direction: row;
+    margin-right: 3em;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 95, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  .select__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* line 103, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 select {
   display: inline-block;
   width: 100%;
@@ -440,19 +510,19 @@ select {
 }
 
 @media (min-width: 576px) {
-  /* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+  /* line 103, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
   select {
     padding: 5px 10px;
   }
 }
 
-/* line 80, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+/* line 121, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 select:hover {
   background-color: white;
   color: tomato;
 }
 
-/* line 84, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
+/* line 125, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_select.scss */
 select .fa {
   font-size: 1.2em;
   padding-right: 5px;

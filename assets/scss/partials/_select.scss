@@ -11,7 +11,10 @@
   border: solid 1px $grey;
   border-radius: $radius;
   height: 2.3em;
-  width:8em;
+  width:100%;
+  @media #{$mobile-l}{
+    width:8em;
+  }
 }
 
 .styled-select:before {
@@ -37,7 +40,7 @@
   left:0px;
   z-index: 100;
   display:none;
-  width:8em;
+  width:100%;
   margin:1px;
   padding:0 2em;
   background-color:white;
@@ -56,6 +59,44 @@
   font-family: $font;
   font-size: .75em;
   font-weight: 400;
+}
+.select__id{
+  display: none;
+  text-align: left;
+  padding:5px;
+  margin:0 5px;
+  font-size: .7em;
+  color:$grey;
+  @media #{$desktop}{
+    display:flex;
+    text-align: right;
+  }
+  @media #{$desktop}{
+    text-align: left;
+    font-size: .6em;
+  }
+}
+
+.select__cont{
+  display:flex;
+  flex-direction: row;
+  @media #{$tablet}{
+    justify-content: flex-end;
+  }
+  @media #{$desktop}{
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  @media #{$lgdesktop}{
+    flex-direction: row;
+    margin-right: 3em;
+  }
+}
+.select__wrapper{
+  @media #{$lgdesktop}{
+    display:flex;
+    justify-content: space-between;
+  }
 }
 
 //************ select country ***********/
