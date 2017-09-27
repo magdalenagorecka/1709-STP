@@ -36,8 +36,11 @@
     padding: 0 10px;
   }
   &__photo{
-    text-align: left;
+
     width: 30%;
+    display: block;
+    text-align: center;
+
     img{
       max-height: 150px;
       max-width: 50px;
@@ -55,10 +58,13 @@
     }
   }
   &__id{
+    display: block;
+    text-align: center;
     padding-top:5px;
     font-size: .7em;
     color:$grey;
   }
+
   &__info{
     padding:0;
     width:70%;
@@ -66,7 +72,9 @@
       width:60%
     }
     @media #{$desktop}{
-      width:55%;
+      width:70%;
+      padding:0 10px 0 30px;
+      margin:0 auto;
     }
     h3{
       text-transform: uppercase;
@@ -97,36 +105,52 @@
   }
 
   &__price{
+    display: inline-block;
     width:100%;
-    margin:.3em auto;
-    padding:.25em;
-    border:1px solid $color-bg;
+    margin:1em auto;
+    padding:1em 0;
+    border:1px solid darken($color-bg, 10%);
     border-radius: $radius;
-    color:$color-primary;
-    font-size: 1.5em;
-    font-weight: 600;
     text-align: center;
-    &::before{
-      content:"Price:";
-      padding-right:.8em;
-      font-weight: lighter;
-      font-size: .6em;
-    }
     @media #{$mobile-l}{
       width:20%;
-      font-size: 1.2em;
-      font-weight: bold;
-      color:$color-primary;
-      padding:.6em 0;
-      white-space: normal;
-      border: 0;
-
-    }
-    @media #{$tablet}{
-      width:15%;
+      border:0;
     }
     @media #{$desktop}{
-      width:10%;
+      width:18%;
+    }
+    &--val{
+      display: inline-block;
+      color:$color-primary;
+      font-size: 1.5em;
+      font-weight: 600;
+      @media #{$mobile-l}{
+        display:block;
+        font-size: 1.2em;
+        font-weight: bold;
+        color:$color-primary;
+        padding:.6em 0;
+        white-space: pre-line;
+        border: 0;
+      }
+      @media #{$tablet}{
+        font-size: 1.5em;
+        padding:.3em 0;
+      }
+    }
+
+    &--tag{
+      display: inline-block;
+      padding-right:.8em;
+      color:$grey;
+      font-weight: lighter;
+      font-size: .6em;
+      @media #{$mobile-l}{
+        display:block;
+      }
+      @media #{$tablet}{
+        font-size: .8em;
+      }
     }
 
   }

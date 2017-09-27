@@ -130,11 +130,12 @@ h3 {
 
 /* line 38, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__photo {
-  text-align: left;
   width: 30%;
+  display: block;
+  text-align: center;
 }
 
-/* line 41, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 44, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__photo img {
   max-height: 150px;
   max-width: 50px;
@@ -156,34 +157,38 @@ h3 {
   }
 }
 
-/* line 57, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 60, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__id {
+  display: block;
+  text-align: center;
   padding-top: 5px;
   font-size: .7em;
   color: #a2a2a2;
 }
 
-/* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 68, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__info {
   padding: 0;
   width: 70%;
 }
 
 @media (min-width: 576px) {
-  /* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  /* line 68, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
   .vinItem__info {
     width: 60%;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 62, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  /* line 68, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
   .vinItem__info {
-    width: 55%;
+    width: 70%;
+    padding: 0 10px 0 30px;
+    margin: 0 auto;
   }
 }
 
-/* line 71, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 79, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__info h3 {
   text-transform: uppercase;
   font-weight: 600;
@@ -191,7 +196,7 @@ h3 {
   line-height: 1.5em;
 }
 
-/* line 79, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 87, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__country {
   padding-bottom: 5px;
   font-size: 1em;
@@ -199,119 +204,149 @@ h3 {
   color: #5b5b5b;
 }
 
-/* line 85, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 93, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__category {
   padding: 8px 0 20px;
   font-size: .9em;
 }
 
-/* line 89, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 97, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__rate {
   font-size: .9em;
 }
 
-/* line 93, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 101, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__small {
   padding-top: 20px;
   font-size: .9em;
   color: #a2a2a2;
 }
 
-/* line 99, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 107, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .vinItem__price {
+  display: inline-block;
   width: 100%;
-  margin: .3em auto;
-  padding: .25em;
-  border: 1px solid whitesmoke;
+  margin: 1em auto;
+  padding: 1em 0;
+  border: 1px solid gainsboro;
   border-radius: 5px;
-  color: tomato;
-  font-size: 1.5em;
-  font-weight: 600;
   text-align: center;
 }
 
-/* line 109, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
-.vinItem__price::before {
-  content: "Price:";
-  padding-right: .8em;
-  font-weight: lighter;
-  font-size: .6em;
+@media (min-width: 576px) {
+  /* line 107, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  .vinItem__price {
+    width: 20%;
+    border: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 107, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  .vinItem__price {
+    width: 18%;
+  }
+}
+
+/* line 122, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__price--val {
+  display: inline-block;
+  color: tomato;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 @media (min-width: 576px) {
-  /* line 99, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
-  .vinItem__price {
-    width: 20%;
+  /* line 122, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  .vinItem__price--val {
+    display: block;
     font-size: 1.2em;
     font-weight: bold;
     color: tomato;
     padding: .6em 0;
-    white-space: normal;
+    white-space: pre-line;
     border: 0;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 99, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
-  .vinItem__price {
-    width: 15%;
+  /* line 122, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  .vinItem__price--val {
+    font-size: 1.5em;
+    padding: .3em 0;
   }
 }
 
-@media (min-width: 992px) {
-  /* line 99, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
-  .vinItem__price {
-    width: 10%;
+/* line 142, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+.vinItem__price--tag {
+  display: inline-block;
+  padding-right: .8em;
+  color: #a2a2a2;
+  font-weight: lighter;
+  font-size: .6em;
+}
+
+@media (min-width: 576px) {
+  /* line 142, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  .vinItem__price--tag {
+    display: block;
   }
 }
 
-/* line 135, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+@media (min-width: 768px) {
+  /* line 142, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+  .vinItem__price--tag {
+    font-size: .8em;
+  }
+}
+
+/* line 159, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .star-1:before {
   content: "\2605\2606\2606\2606\2606";
 }
 
-/* line 136, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 160, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .star-2:before {
   content: "\2605\2605\2606\2606\2606";
 }
 
-/* line 137, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 161, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .star-3:before {
   content: "\2605\2605\2605\2606\2606";
 }
 
-/* line 138, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 162, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .star-4:before {
   content: "\2605\2605\2605\2605\2606";
 }
 
-/* line 139, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 163, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .star-5:before {
   content: "\2605\2605\2605\2605\2605";
 }
 
-/* line 140, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 164, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .star-null:before {
   content: "\2606\2606\2606\2606\2606";
 }
 
-/* line 142, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 166, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .star-1, .star-2, .star-3, .star-4, .star-5, .star-null {
   color: tomato;
   padding-right: 10px;
 }
 
-/* line 147, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 171, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .cat-1 {
   color: #b71c1c;
 }
 
-/* line 148, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 172, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .cat-2 {
   color: #FFB300;
 }
 
-/* line 149, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
+/* line 173, /Users/magdalenagorecka/GitHub/1709-STP/assets/scss/partials/_vin.scss */
 .cat-3 {
   color: #F48FB1;
 }
