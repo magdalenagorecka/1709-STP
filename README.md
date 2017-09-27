@@ -1,5 +1,7 @@
 # 1709-STP
 
+Live Preview: http://serwer1309439.home.pl/STP2/index.html
+
 Source Assets:
 
 - Google Font 'Open Sans' https://fonts.google.com/
